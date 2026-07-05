@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ColorCollect — Hunt real-world colors into photo montages</title>
+<meta name="description" content="ColorCollect is a color-hunting photo game: pick a color, photograph real-world matches, and snap them into a beautiful montage. Free, no ads, solo or with friends.">
+<link rel="canonical" href="https://lancimator.github.io/colorcollect-site/">
+<meta name="theme-color" content="#43A047">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%2343A047'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ColorCollect">
+<meta property="og:title" content="ColorCollect — Hunt real-world colors into photo montages">
+<meta property="og:description" content="ColorCollect is a color-hunting photo game: pick a color, photograph real-world matches, and snap them into a beautiful montage. Free, no ads, solo or with friends.">
+<meta property="og:image" content="https://lancimator.github.io/colorcollect-site/assets/hero-1.jpg">
+<meta property="og:url" content="https://lancimator.github.io/colorcollect-site/">
+<meta name="twitter:card" content="summary_large_image">
+<style>*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#191919;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent-700);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2{line-height:1.15;letter-spacing:-.01em}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 20px}
+section{margin:40px 0}
+.fine{font-size:14px;color:#666}
+.text-cta{font-weight:600}
+
+.site-head{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.5) blur(10px);-webkit-backdrop-filter:saturate(1.5) blur(10px);border-bottom:1px solid rgba(0,0,0,.06)}
+.head-in{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-flex;align-items:center;gap:9px;font-weight:800;color:#111;font-size:18px}
+.brand:hover{text-decoration:none}
+.brand-dot{width:16px;height:16px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(0,0,0,.04)}
+.head-nav{display:flex;align-items:center;gap:18px;font-size:15px}
+.head-nav a{color:#444}
+.nav-cta{background:var(--accent);color:var(--on-accent)!important;padding:8px 14px;border-radius:10px;font-weight:600}
+.nav-cta:hover{text-decoration:none;opacity:.92}
+@media(max-width:560px){.head-nav a:not(.nav-cta){display:none}}
+
+.hero{padding:44px 0 8px}
+.hero h1{font-size:2.7rem;margin:.1em 0 .3em}
+.lede{font-size:1.18rem;color:#3c3c3c;max-width:42ch}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 8px}
+.shots img{border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.16)}
+@media(max-width:640px){.shots{grid-template-columns:1fr 1fr}.shots img:first-child{grid-column:1 / -1}}
+
+.badges{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.store-badge{display:inline-flex;align-items:center;gap:11px;background:#111;color:#fff;padding:11px 18px;border-radius:13px}
+.store-badge:hover{text-decoration:none;opacity:.9}
+.store-badge-txt{display:flex;flex-direction:column;line-height:1.12}
+.store-badge-txt small{font-size:10px;letter-spacing:.06em;opacity:.85}
+.store-badge-txt strong{font-size:17px;font-weight:600}
+
+.features{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin:18px 0;padding:0;list-style:none}
+.features li{position:relative;padding-left:26px;color:#333}
+.features li:before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+@media(max-width:560px){.features{grid-template-columns:1fr}}
+
+.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:22px 0}
+.color-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.09);transition:transform .12s,box-shadow .12s}
+.color-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.13);text-decoration:none}
+.color-card .chip{display:block;height:92px}
+.color-card .meta{display:block;padding:11px 14px}
+.color-card .meta b{display:block;color:#191919}
+.color-card .meta span{color:#777;font-size:13px;font-variant-numeric:tabular-nums}
+
+.color-hero{background:var(--accent);color:var(--on-accent);border-radius:26px;padding:40px 34px;margin:26px 0}
+.color-hero .eyebrow{font-size:13px;letter-spacing:.05em;text-transform:uppercase;opacity:.82;font-weight:600}
+.color-hero h1{font-size:2.8rem;margin:.15em 0 .35em}
+.hero-sub{opacity:.9;margin:.6em 0 0;font-variant-numeric:tabular-nums}
+.hex-copy{background:var(--on-accent);color:var(--accent);border:none;border-radius:11px;padding:9px 16px;font:inherit;font-weight:700;cursor:pointer;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.hex-copy:hover{opacity:.92}
+.eyebrow{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-700);font-weight:700}
+
+.scale{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0}
+.sw{flex:1 1 74px;min-width:62px;border:none;border-radius:12px;padding:14px 8px 12px;cursor:pointer;font:inherit;display:flex;flex-direction:column;gap:8px;align-items:flex-start;transition:transform .09s}
+.sw:hover{transform:translateY(-2px)}
+.sw-stop{font-size:11px;font-weight:700;opacity:.85}
+.sw-hex{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+
+.suggest{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.sug{width:128px;background:#fff;border:none;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.09);cursor:pointer;font:inherit;text-align:left;transition:transform .1s}
+.sug:hover{transform:translateY(-2px)}
+.sug .band{display:block;height:58px}
+.sug .cap{display:block;padding:8px 11px}
+.sug .cap b{display:block;font-size:13px;color:#191919}
+.sug .cap .js-hex{font-size:12px;color:#777;font-variant-numeric:tabular-nums}
+
+figure{margin:28px 0}
+.montage{border-radius:20px;box-shadow:0 14px 44px rgba(0,0,0,.18);margin:0 auto;width:100%;max-width:600px}
+figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
+
+.related{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:999px;padding:7px 14px;font-size:14px;color:#333}
+.pill:hover{text-decoration:none;border-color:rgba(0,0,0,.2)}
+.pill .dot{width:12px;height:12px;border-radius:50%}
+
+.cta{background:#fff;border-radius:22px;padding:32px 28px;box-shadow:0 1px 3px rgba(0,0,0,.09);text-align:center}
+.cta h2{margin-top:0}
+.cta .badges{justify-content:center}
+
+.copied{outline:2px solid rgba(0,0,0,.28);outline-offset:1px}
+
+.site-foot{margin:56px 0 36px;color:#666;font-size:14px}
+.site-foot .wrap{padding-top:24px;border-top:1px solid rgba(0,0,0,.09)}
+.site-foot nav{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}
+.site-foot .handle{opacity:.7}
+
+:root{--bg:#FAFDFA;--accent:#43A047;--accent-600:#43A047;--accent-700:#357E38;--on-accent:#000000;}
+</style>
+</head>
+<body>
+<header class="site-head"><div class="wrap head-in">
+<a class="brand" href="/colorcollect-site/"><span class="brand-dot"></span>ColorCollect</a>
+<nav class="head-nav">
+<a href="/colorcollect-site/color-of-the-day/">Today's color</a>
+<a href="/colorcollect-site/#colors">Colors</a>
+<a class="nav-cta" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=nav">Get the app</a>
+</nav></div></header>
+<main class="wrap">
+<section class="hero">
+<h1>Turn the colors around you into art.</h1>
+<p class="lede">ColorCollect is a color-hunting photo game. Pick a color, find real-world things that match — a red door, a yellow flower, a blue sky — and your shots snap into a montage you can save and share.</p>
+<div class="badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=hero" aria-label="Get ColorCollect on Google Play">
+<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 3.2 14.2 12 4 20.8c-.32-.2-.5-.55-.5-.98V4.18c0-.43.18-.78.5-.98z" fill="#fff"/></svg>
+<span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a></div>
+<div class="shots"><img src="assets/hero-1.jpg" width="944" height="944" loading="eager" decoding="async" alt="A ColorCollect photo montage in the color-pop frame style"><img src="assets/hero-2.jpg" width="924" height="924" loading="lazy" decoding="async" alt="A ColorCollect photo montage in the contact-sheet frame style"><img src="assets/hero-3.jpg" width="944" height="1004" loading="lazy" decoding="async" alt="A ColorCollect photo montage in the polaroid frame style"></div>
+</section>
+
+<section>
+<h2>A mindful little adventure that trains your eye</h2>
+<p>Everything in solo mode stays on your device — no account, no internet needed. Capture with your camera or pull from your gallery, drag to rearrange the grid, and pick a frame style: clean contact-sheet lines, rounded color-pop gaps, or a classic polaroid look. Save to your gallery and share anywhere.</p>
+<ul class="features">
+<li>Free — every grid size and frame style unlocked</li>
+<li>No ads, no account needed to play solo</li>
+<li>Solo mode is fully on-device and offline</li>
+<li>Group hunts in real time with a short invite code</li>
+<li>Three frame styles: contact, color pop, polaroid</li>
+<li>Beautiful, shareable results — privacy-first by design</li>
+</ul>
+</section>
+
+<section>
+<h2>Today's color</h2>
+<p>Everyone sees the same color of the day — a shared daily hunt. Today it's <a href="/colorcollect-site/colors/green/"><strong>Green</strong></a> (#43A047).</p>
+<p><a class="text-cta" href="/colorcollect-site/color-of-the-day/">See today's color and montage →</a></p>
+</section>
+
+<section id="colors">
+<h2>Color palettes &amp; hex codes</h2>
+<p>Browse a page for every huntable color — an 11-stop tonal scale, hex codes you can copy, and a sample montage. Great for design palettes or picking your next hunt.</p>
+<div class="color-grid"><a class="color-card" href="/colorcollect-site/colors/red/"><span class="chip" style="background:#E53935"></span><span class="meta"><b>Red</b><span>#E53935</span></span></a><a class="color-card" href="/colorcollect-site/colors/orange/"><span class="chip" style="background:#FB8C00"></span><span class="meta"><b>Orange</b><span>#FB8C00</span></span></a><a class="color-card" href="/colorcollect-site/colors/yellow/"><span class="chip" style="background:#FDD835"></span><span class="meta"><b>Yellow</b><span>#FDD835</span></span></a><a class="color-card" href="/colorcollect-site/colors/green/"><span class="chip" style="background:#43A047"></span><span class="meta"><b>Green</b><span>#43A047</span></span></a><a class="color-card" href="/colorcollect-site/colors/teal/"><span class="chip" style="background:#00ACC1"></span><span class="meta"><b>Teal</b><span>#00ACC1</span></span></a><a class="color-card" href="/colorcollect-site/colors/blue/"><span class="chip" style="background:#1E88E5"></span><span class="meta"><b>Blue</b><span>#1E88E5</span></span></a><a class="color-card" href="/colorcollect-site/colors/violet/"><span class="chip" style="background:#5E35B1"></span><span class="meta"><b>Violet</b><span>#5E35B1</span></span></a><a class="color-card" href="/colorcollect-site/colors/pink/"><span class="chip" style="background:#D81B60"></span><span class="meta"><b>Pink</b><span>#D81B60</span></span></a><a class="color-card" href="/colorcollect-site/colors/brown/"><span class="chip" style="background:#8D6E63"></span><span class="meta"><b>Brown</b><span>#8D6E63</span></span></a><a class="color-card" href="/colorcollect-site/colors/slate/"><span class="chip" style="background:#546E7A"></span><span class="meta"><b>Slate</b><span>#546E7A</span></span></a><a class="color-card" href="/colorcollect-site/colors/sunset/"><span class="chip" style="background:#F4511E"></span><span class="meta"><b>Sunset</b><span>#F4511E</span></span></a><a class="color-card" href="/colorcollect-site/colors/mint/"><span class="chip" style="background:#26A69A"></span><span class="meta"><b>Mint</b><span>#26A69A</span></span></a><a class="color-card" href="/colorcollect-site/colors/lime/"><span class="chip" style="background:#7CB342"></span><span class="meta"><b>Lime</b><span>#7CB342</span></span></a><a class="color-card" href="/colorcollect-site/colors/rose/"><span class="chip" style="background:#EC407A"></span><span class="meta"><b>Rose</b><span>#EC407A</span></span></a><a class="color-card" href="/colorcollect-site/colors/crimson/"><span class="chip" style="background:#961428"></span><span class="meta"><b>Crimson</b><span>#961428</span></span></a><a class="color-card" href="/colorcollect-site/colors/coral/"><span class="chip" style="background:#FF7F50"></span><span class="meta"><b>Coral</b><span>#FF7F50</span></span></a><a class="color-card" href="/colorcollect-site/colors/amber/"><span class="chip" style="background:#FFC000"></span><span class="meta"><b>Amber</b><span>#FFC000</span></span></a><a class="color-card" href="/colorcollect-site/colors/gold/"><span class="chip" style="background:#FFD700"></span><span class="meta"><b>Gold</b><span>#FFD700</span></span></a><a class="color-card" href="/colorcollect-site/colors/forest/"><span class="chip" style="background:#146432"></span><span class="meta"><b>Forest</b><span>#146432</span></span></a><a class="color-card" href="/colorcollect-site/colors/turquoise/"><span class="chip" style="background:#40E0D0"></span><span class="meta"><b>Turquoise</b><span>#40E0D0</span></span></a><a class="color-card" href="/colorcollect-site/colors/sky/"><span class="chip" style="background:#78C8EB"></span><span class="meta"><b>Sky</b><span>#78C8EB</span></span></a><a class="color-card" href="/colorcollect-site/colors/navy/"><span class="chip" style="background:#141E5A"></span><span class="meta"><b>Navy</b><span>#141E5A</span></span></a><a class="color-card" href="/colorcollect-site/colors/indigo/"><span class="chip" style="background:#4B0082"></span><span class="meta"><b>Indigo</b><span>#4B0082</span></span></a><a class="color-card" href="/colorcollect-site/colors/purple/"><span class="chip" style="background:#801E8C"></span><span class="meta"><b>Purple</b><span>#801E8C</span></span></a><a class="color-card" href="/colorcollect-site/colors/magenta/"><span class="chip" style="background:#DC28C8"></span><span class="meta"><b>Magenta</b><span>#DC28C8</span></span></a></div>
+</section>
+
+<section class="cta">
+<h2>Pick a color. Hunt the world. Share your collection.</h2>
+<p>Free on Android. No ads.</p>
+<div class="badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=home_cta" aria-label="Get ColorCollect on Google Play">
+<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 3.2 14.2 12 4 20.8c-.32-.2-.5-.55-.5-.98V4.18c0-.43.18-.78.5-.98z" fill="#fff"/></svg>
+<span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a></div>
+<p class="fine"><a href="https://lancimator.github.io/privacy-policy/colorcollect_privacy.html">Privacy policy</a></p>
+</section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<div>Hunt real-world colors into beautiful photo montages — solo or with friends.</div>
+<nav>
+<a href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=footer">Google Play</a>
+
+<a href="https://lancimator.github.io/privacy-policy/colorcollect_privacy.html">Privacy policy</a>
+<a href="/colorcollect-site/color-of-the-day/">Color of the day</a>
+</nav>
+<div class="handle">@colorcollectapp</div>
+</div></footer>
+<script>
+function ccCopy(t,el){try{navigator.clipboard.writeText(t);}catch(e){}var lab=el.querySelector('.js-hex');if(!lab){return;}var p=lab.getAttribute('data-hex')||lab.textContent;lab.textContent='Copied';el.classList.add('copied');setTimeout(function(){lab.textContent=p;el.classList.remove('copied');},900);}
+</script>
+</body>
+</html>

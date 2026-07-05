@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lancimator.github.io/colorcollect-site/sitemap.xml
