@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ColorCollect — Hunt real-world colors into photo montages</title>
-<meta name="description" content="ColorCollect is a color-hunting photo game: pick a color, photograph real-world matches, and snap them into a beautiful montage. Free, no ads, solo or with friends.">
+<title>ColorCollect — Photo montage color game, solo or group</title>
+<meta name="description" content="ColorCollect is a color-hunting photo game: pick a color, photograph real-world matches, and snap them into a beautiful montage. Play solo, or race friends in a live group hunt. Free, no ads.">
 <link rel="canonical" href="https://lancimator.github.io/colorcollect-site/">
 <meta name="theme-color" content="#43A047">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%2343A047'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ColorCollect">
-<meta property="og:title" content="ColorCollect — Hunt real-world colors into photo montages">
-<meta property="og:description" content="ColorCollect is a color-hunting photo game: pick a color, photograph real-world matches, and snap them into a beautiful montage. Free, no ads, solo or with friends.">
+<meta property="og:title" content="ColorCollect — Photo montage color game, solo or group">
+<meta property="og:description" content="ColorCollect is a color-hunting photo game: pick a color, photograph real-world matches, and snap them into a beautiful montage. Play solo, or race friends in a live group hunt. Free, no ads.">
 <meta property="og:image" content="https://lancimator.github.io/colorcollect-site/assets/hero-1.jpg">
 <meta property="og:url" content="https://lancimator.github.io/colorcollect-site/">
 <meta name="twitter:card" content="summary_large_image">
@@ -56,6 +56,22 @@ section{margin:40px 0}
 .features li{position:relative;padding-left:26px;color:#333}
 .features li:before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:50%;background:var(--accent)}
 @media(max-width:560px){.features{grid-template-columns:1fr}}
+
+/* Numbered "how it works" steps — accent-numbered cards, mobile-first. */
+.steps{counter-reset:step;list-style:none;padding:0;margin:22px 0;display:grid;gap:14px}
+.steps li{counter-increment:step;position:relative;padding:16px 18px 16px 66px;background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.steps li:before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+.steps li b{display:block;font-size:1.02rem;color:#191919;margin-bottom:2px}
+.steps li span{display:block;color:#555;font-size:14px}
+
+/* "Two ways to play" — side-by-side mode cards, stack on narrow screens. */
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+.mode{background:#fff;border-radius:18px;padding:24px 22px;box-shadow:0 1px 3px rgba(0,0,0,.08);border-top:4px solid var(--accent)}
+.mode h3{margin:0 0 4px;font-size:1.18rem}
+.mode .mode-sub{margin:0 0 12px;color:#666;font-size:14px}
+.mode ul{margin:0;padding-left:20px}
+.mode li{margin:6px 0;color:#333;font-size:14px}
+@media(max-width:640px){.modes{grid-template-columns:1fr}}
 
 /* Hunt wheel — the color palette section as a radial color→montage figure. */
 .colors{--wheel:min(88vw,660px)}
@@ -145,17 +161,16 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <nav class="head-nav">
 <a href="/colorcollect-site/color-of-the-day/">Today's color</a>
 <a href="/colorcollect-site/#colors">Colors</a>
+<a href="/colorcollect-site/play-with-friends/">Play with friends</a>
 <a class="nav-cta" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=nav">Get the app</a>
 </nav></div></header>
 <main class="wrap">
 <section class="hero">
 <h1>Turn the colors around you into art.</h1>
-<p class="lede">ColorCollect is a color-hunting photo game. Pick a color, find real-world things that match — a red door, a yellow flower, a blue sky — and your shots snap into a montage you can save and share.</p>
+<p class="lede">ColorCollect is a color-hunting photo game. Pick a color, find real-world things that match — a red door, a yellow flower, a blue sky — and your shots snap into a montage you can save and share. Hunt solo, or race your friends in a live group hunt.</p>
 <div class="badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=hero" aria-label="Get ColorCollect on Google Play">
 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 3.2 14.2 12 4 20.8c-.32-.2-.5-.55-.5-.98V4.18c0-.43.18-.78.5-.98z" fill="#fff"/></svg>
-<span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a><a class="store-badge" href="https://apps.apple.com/app/id6784390996" aria-label="Download ColorCollect on the App Store">
-<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="#fff"/></svg>
-<span class="store-badge-txt"><small>Download on the</small><strong>App Store</strong></span></a></div>
+<span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a></div>
 <div class="shots"><img src="assets/hero-1.jpg" width="944" height="944" loading="eager" decoding="async" alt="A ColorCollect photo montage in the color-pop frame style"><img src="assets/hero-2.jpg" width="924" height="924" loading="lazy" decoding="async" alt="A ColorCollect photo montage in the contact-sheet frame style"><img src="assets/hero-3.jpg" width="944" height="1004" loading="lazy" decoding="async" alt="A ColorCollect photo montage in the polaroid frame style"></div>
 </section>
 
@@ -166,15 +181,27 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <li>Free — every grid size and frame style unlocked</li>
 <li>No ads, no account needed to play solo</li>
 <li>Solo mode is fully on-device and offline</li>
-<li>Group hunts in real time with a short invite code</li>
+<li>Live group hunts — share a 6-letter code, no accounts</li>
+<li>Vote mode: everyone picks the best shot per cell</li>
+<li>Shareable final-standings podium card</li>
 <li>Three frame styles: contact, color pop, polaroid</li>
 <li>Beautiful, shareable results — privacy-first by design</li>
 </ul>
 </section>
 
 <section>
+<h2>Hunt together</h2>
+<p>Turn any color into a party. Create a room, and ColorCollect hands you a 6-letter code — friends join with the code or an invite link, no accounts, just a name. Everyone hunts the same color in real time and every shot lands on the shared grid live. In Vote mode you all pick the best photo for each cell, then one montage is built from everyone's winning shots. The finish line is a shareable final-standings card — gold, silver, and bronze, with the join code baked in, so every share doubles as an invite.</p>
+<figure>
+<img class="montage" src="assets/friends-standings.png" width="720" height="720" loading="lazy" decoding="async" alt="ColorCollect final-standings podium card: a Coral group hunt with Mia, Leo, and Zoe on the podium and the join code HK7Q4W.">
+<figcaption>The final-standings card shared after a group hunt — podium plus the join code.</figcaption>
+</figure>
+<p><a class="text-cta" href="/colorcollect-site/play-with-friends/">See how group hunts work →</a></p>
+</section>
+
+<section>
 <h2>Today's color</h2>
-<p>Everyone sees the same color of the day — a shared daily hunt. Today it's <a href="/colorcollect-site/colors/green/"><strong>Green</strong></a> (#43A047).</p>
+<p>Everyone sees the same color of the day — a shared daily hunt. Today it's <a id="home-today-link" href="/colorcollect-site/colors/green/"><strong id="home-today-name">Green</strong></a> (<span id="home-today-hex">#43A047</span>).</p>
 <p><a class="text-cta" href="/colorcollect-site/color-of-the-day/">See today's color and montage →</a></p>
 </section>
 
@@ -186,12 +213,10 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 
 <section class="cta">
 <h2>Pick a color. Hunt the world. Share your collection.</h2>
-<p>Free on Android and iOS. No ads.</p>
+<p>Free on Android. No ads.</p>
 <div class="badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=home_cta" aria-label="Get ColorCollect on Google Play">
 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 3.2 14.2 12 4 20.8c-.32-.2-.5-.55-.5-.98V4.18c0-.43.18-.78.5-.98z" fill="#fff"/></svg>
-<span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a><a class="store-badge" href="https://apps.apple.com/app/id6784390996" aria-label="Download ColorCollect on the App Store">
-<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="#fff"/></svg>
-<span class="store-badge-txt"><small>Download on the</small><strong>App Store</strong></span></a></div>
+<span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a></div>
 <p class="fine"><a href="https://lancimator.github.io/privacy-policy/colorcollect_privacy.html">Privacy policy</a></p>
 </section>
 </main>
@@ -199,7 +224,8 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <div>Hunt real-world colors into beautiful photo montages — solo or with friends.</div>
 <nav>
 <a href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=footer">Google Play</a>
-<a href="https://apps.apple.com/app/id6784390996">App Store</a>
+
+<a href="/colorcollect-site/play-with-friends/">Play with friends</a>
 <a href="https://lancimator.github.io/privacy-policy/colorcollect_privacy.html">Privacy policy</a>
 <a href="/colorcollect-site/color-of-the-day/">Color of the day</a>
 </nav>
@@ -207,6 +233,40 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 </div></footer>
 <script>
 function ccCopy(t,el){try{navigator.clipboard.writeText(t);}catch(e){}var lab=el.querySelector('.js-hex');if(!lab){return;}var p=lab.getAttribute('data-hex')||lab.textContent;lab.textContent='Copied';el.classList.add('copied');setTimeout(function(){lab.textContent=p;el.classList.remove('copied');},900);}
+</script>
+<script>
+const CC_DAILY=[{n:'Red',s:'red',hex:"#E53935",r:229,g:57,b:53,a6:"#CE1F1B",a7:"#A21815",on:"#FFFFFF",bg:"#FEF8F8",sc:[["50","#FEF8F8","#000000"],["100","#FCEBEA","#000000"],["200","#F8CAC9","#000000"],["300","#F29E9C","#000000"],["400","#EB6764","#000000"],["500","#E53935","#FFFFFF"],["600","#CE1F1B","#FFFFFF"],["700","#A21815","#FFFFFF"],["800","#791210","#FFFFFF"],["900","#570D0B","#FFFFFF"],["950","#290605","#FFFFFF"],]},{n:'Orange',s:'orange',hex:"#FB8C00",r:251,g:140,b:0,a6:"#FB8C00",a7:"#C56E00",on:"#000000",bg:"#FFFCF7",sc:[["50","#FFFCF7","#000000"],["100","#FFF5E8","#000000"],["200","#FFE5C5","#000000"],["300","#FFD095","#000000"],["400","#FFB659","#000000"],["500","#FF9F27","#000000"],["600","#FB8C00","#000000"],["700","#C56E00","#FFFFFF"],["800","#915100","#FFFFFF"],["900","#683A00","#FFFFFF"],["950","#2E1A00","#FFFFFF"],]},{n:'Yellow',s:'yellow',hex:"#FDD835",r:253,g:216,b:53,a6:"#F9CB02",a7:"#C39F02",on:"#000000",bg:"#FFFEF7",sc:[["50","#FFFEF7","#000000"],["100","#FFFBE9","#000000"],["200","#FEF4C9","#000000"],["300","#FEEC9C","#000000"],["400","#FDE164","#000000"],["500","#FDD835","#000000"],["600","#F9CB02","#000000"],["700","#C39F02","#000000"],["800","#907601","#FFFFFF"],["900","#675401","#FFFFFF"],["950","#2D2500","#FFFFFF"],]},{n:'Green',s:'green',hex:"#43A047",r:67,g:160,b:71,a6:"#43A047",a7:"#357E38",on:"#000000",bg:"#FAFDFA",sc:[["50","#FAFDFA","#000000"],["100","#EEF8EE","#000000"],["200","#D3ECD4","#000000"],["300","#AEDDB0","#000000"],["400","#7FCA83","#000000"],["500","#59B95D","#000000"],["600","#43A047","#000000"],["700","#357E38","#FFFFFF"],["800","#275E2A","#FFFFFF"],["900","#1D441E","#FFFFFF"],["950","#0E200E","#FFFFFF"],]},{n:'Teal',s:'teal',hex:"#00ACC1",r:0,g:172,b:193,a6:"#00D4EE",a7:"#00ACC1",on:"#000000",bg:"#F7FEFF",sc:[["50","#F7FEFF","#000000"],["100","#E7FCFF","#000000"],["200","#C2F8FF","#000000"],["300","#90F3FF","#000000"],["400","#51ECFF","#000000"],["500","#1CE6FF","#000000"],["600","#00D4EE","#000000"],["700","#00ACC1","#000000"],["800","#007F8F","#FFFFFF"],["900","#005B66","#FFFFFF"],["950","#00292E","#FFFFFF"],]},{n:'Blue',s:'blue',hex:"#1E88E5",r:30,g:136,b:229,a6:"#1E88E5",a7:"#156AB5",on:"#FFFFFF",bg:"#F8FBFE",sc:[["50","#F8FBFE","#000000"],["100","#EBF4FD","#000000"],["200","#CDE4F9","#000000"],["300","#A3CEF4","#000000"],["400","#6FB3EE","#000000"],["500","#439CE9","#000000"],["600","#1E88E5","#FFFFFF"],["700","#156AB5","#FFFFFF"],["800","#0F4E86","#FFFFFF"],["900","#0B385F","#FFFFFF"],["950","#051829","#FFFFFF"],]},{n:'Violet',s:'violet',hex:"#5E35B1",r:94,g:53,b:177,a6:"#5E35B1",a7:"#4A2A8B",on:"#FFFFFF",bg:"#FAF9FD",sc:[["50","#FAF9FD","#000000"],["100","#F1EDF9","#000000"],["200","#DACFF1","#000000"],["300","#BCA7E5","#000000"],["400","#9575D6","#000000"],["500","#754BC9","#FFFFFF"],["600","#5E35B1","#FFFFFF"],["700","#4A2A8B","#FFFFFF"],["800","#371F68","#FFFFFF"],["900","#28174B","#FFFFFF"],["950","#130B23","#FFFFFF"],]},{n:'Pink',s:'pink',hex:"#D81B60",r:216,g:27,b:96,a6:"#D81B60",a7:"#A9154B",on:"#FFFFFF",bg:"#FEF8FA",sc:[["50","#FEF8FA","#000000"],["100","#FCEAF1","#000000"],["200","#F8CADB","#000000"],["300","#F39EBD","#000000"],["400","#EC6798","#000000"],["500","#E63978","#FFFFFF"],["600","#D81B60","#FFFFFF"],["700","#A9154B","#FFFFFF"],["800","#7E1038","#FFFFFF"],["900","#5A0B28","#FFFFFF"],["950","#290512","#FFFFFF"],]},{n:'Brown',s:'brown',hex:"#8D6E63",r:141,g:110,b:99,a6:"#8D6E63",a7:"#6F564E",on:"#FFFFFF",bg:"#FCFBFB",sc:[["50","#FCFBFB","#000000"],["100","#F5F2F1","#000000"],["200","#E6DEDC","#000000"],["300","#D2C3BE","#000000"],["400","#B8A199","#000000"],["500","#A2857B","#000000"],["600","#8D6E63","#FFFFFF"],["700","#6F564E","#FFFFFF"],["800","#52403A","#FFFFFF"],["900","#3B2E29","#FFFFFF"],["950","#1B1513","#FFFFFF"],]},{n:'Slate',s:'slate',hex:"#546E7A",r:84,g:110,b:122,a6:"#668594",a7:"#546E7A",on:"#FFFFFF",bg:"#FAFBFC",sc:[["50","#FAFBFC","#000000"],["100","#F1F4F6","#000000"],["200","#DCE4E7","#000000"],["300","#C0CDD4","#000000"],["400","#9CB1BB","#000000"],["500","#7E99A6","#000000"],["600","#668594","#FFFFFF"],["700","#546E7A","#FFFFFF"],["800","#3E515A","#FFFFFF"],["900","#2C393F","#FFFFFF"],["950","#13191B","#FFFFFF"],]},{n:'Sunset',s:'sunset',hex:"#F4511E",r:244,g:81,b:30,a6:"#D83B0B",a7:"#AA2F08",on:"#FFFFFF",bg:"#FFF9F8",sc:[["50","#FFF9F8","#000000"],["100","#FEEDE8","#000000"],["200","#FCD1C3","#000000"],["300","#FAAA91","#000000"],["400","#F77A52","#000000"],["500","#F4511E","#FFFFFF"],["600","#D83B0B","#FFFFFF"],["700","#AA2F08","#FFFFFF"],["800","#7F2306","#FFFFFF"],["900","#5C1905","#FFFFFF"],["950","#2C0C02","#FFFFFF"],]},{n:'Mint',s:'mint',hex:"#26A69A",r:38,g:166,b:154,a6:"#2EC9BB",a7:"#26A69A",on:"#000000",bg:"#F9FEFD",sc:[["50","#F9FEFD","#000000"],["100","#ECFBF9","#000000"],["200","#CFF4F1","#000000"],["300","#A8EBE5","#000000"],["400","#76E0D6","#000000"],["500","#4DD6C9","#000000"],["600","#2EC9BB","#000000"],["700","#26A69A","#000000"],["800","#1C7A71","#FFFFFF"],["900","#145750","#FFFFFF"],["950","#092523","#FFFFFF"],]},{n:'Lime',s:'lime',hex:"#7CB342",r:124,g:179,b:66,a6:"#7CB342",a7:"#618C34",on:"#000000",bg:"#FBFDF9",sc:[["50","#FBFDF9","#000000"],["100","#F4F9EE","#000000"],["200","#E2EFD4","#000000"],["300","#CAE2B0","#000000"],["400","#ABD183","#000000"],["500","#92C35D","#000000"],["600","#7CB342","#000000"],["700","#618C34","#FFFFFF"],["800","#486826","#FFFFFF"],["900","#344A1B","#FFFFFF"],["950","#17220C","#FFFFFF"],]},{n:'Rose',s:'rose',hex:"#EC407A",r:236,g:64,b:122,a6:"#E0165A",a7:"#B01147",on:"#FFFFFF",bg:"#FEF8FA",sc:[["50","#FEF8FA","#000000"],["100","#FDEBF1","#000000"],["200","#FACCDB","#000000"],["300","#F6A2BE","#000000"],["400","#F06C99","#000000"],["500","#EC407A","#FFFFFF"],["600","#E0165A","#FFFFFF"],["700","#B01147","#FFFFFF"],["800","#820D34","#FFFFFF"],["900","#5D0926","#FFFFFF"],["950","#2A0411","#FFFFFF"],]},];
+const CC_BASE='/colorcollect-site';
+(function(){
+var D=CC_DAILY;if(!D||!D.length)return;
+function swatch(sc){var o='';for(var j=0;j<sc.length;j++){var s=sc[j][0],hex=sc[j][1],onc=sc[j][2];o+='<button type="button" class="sw" role="listitem" style="background:'+hex+';color:'+onc+'" onclick="ccCopy(\''+hex+'\',this)" aria-label="Copy '+hex+', shade '+s+'"><span class="sw-stop">'+s+'</span><span class="sw-hex js-hex" data-hex="'+hex+'">'+hex+'</span></button>';}return o;}
+var ed=Math.floor(Date.now()/86400000);
+var d=D[((ed%D.length)+D.length)%D.length];
+var dateStr=new Date(ed*86400000).toISOString().slice(0,10);
+function $(id){return document.getElementById(id);}
+function set(id,t){var e=$(id);if(e)e.textContent=t;}
+if($('cod-name')){
+var rs=document.documentElement.style;
+rs.setProperty('--bg',d.bg);rs.setProperty('--accent',d.hex);rs.setProperty('--accent-600',d.a6);rs.setProperty('--accent-700',d.a7);rs.setProperty('--on-accent',d.on);
+var tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.setAttribute('content',d.hex);
+var fav=document.querySelector('link[rel="icon"]');if(fav)fav.setAttribute('href',"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%23"+d.hex.slice(1)+"'/%3E%3C/svg%3E");
+document.title=d.n+' — ColorCollect color of the day ('+dateStr+')';
+set('cod-eyebrow','Color of the day · '+dateStr);
+set('cod-name',d.n);
+var hx=$('cod-hex');if(hx){hx.textContent=d.hex;hx.setAttribute('data-hex',d.hex);}
+var hb=$('cod-hexbtn');if(hb){hb.setAttribute('onclick',"ccCopy('"+d.hex+"',this)");hb.setAttribute('aria-label','Copy '+d.hex);}
+set('cod-rgb','rgb('+d.r+', '+d.g+', '+d.b+') — the same color every ColorCollect player is hunting today.');
+var mon=$('cod-montage');if(mon){mon.setAttribute('src',CC_BASE+'/colors/'+d.s+'/montage.jpg');mon.setAttribute('alt','A ColorCollect photo montage in '+d.n+' ('+d.hex+'), nine real-world photos matching the color.');}
+set('cod-cap','The '+d.n+' color of the day, composed with ColorCollect.');
+set('cod-scale-h','The '+d.n+' tonal scale');
+var sc=$('cod-scale');if(sc)sc.innerHTML=swatch(d.sc);
+set('cod-cta-h','Hunt '+d.n+' in the real world');
+set('cod-cta-p','Open ColorCollect, pick '+d.n+', and turn today\'s color into your own montage.');
+var cl=$('cod-cta-link');if(cl){cl.setAttribute('href',CC_BASE+'/colors/'+d.s+'/');cl.textContent='Explore the full '+d.n+' palette →';}
+}
+var hn=$('home-today-name');
+if(hn){hn.textContent=d.n;var hl=$('home-today-link');if(hl)hl.setAttribute('href',CC_BASE+'/colors/'+d.s+'/');set('home-today-hex',d.hex);}
+})();
 </script>
 </body>
 </html>

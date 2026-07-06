@@ -57,13 +57,58 @@ section{margin:40px 0}
 .features li:before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:50%;background:var(--accent)}
 @media(max-width:560px){.features{grid-template-columns:1fr}}
 
-.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:22px 0}
-.color-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.09);transition:transform .12s,box-shadow .12s}
-.color-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.13);text-decoration:none}
-.color-card .chip{display:block;height:92px}
-.color-card .meta{display:block;padding:11px 14px}
-.color-card .meta b{display:block;color:#191919}
-.color-card .meta span{color:#777;font-size:13px;font-variant-numeric:tabular-nums}
+/* Numbered "how it works" steps — accent-numbered cards, mobile-first. */
+.steps{counter-reset:step;list-style:none;padding:0;margin:22px 0;display:grid;gap:14px}
+.steps li{counter-increment:step;position:relative;padding:16px 18px 16px 66px;background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.steps li:before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+.steps li b{display:block;font-size:1.02rem;color:#191919;margin-bottom:2px}
+.steps li span{display:block;color:#555;font-size:14px}
+
+/* "Two ways to play" — side-by-side mode cards, stack on narrow screens. */
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+.mode{background:#fff;border-radius:18px;padding:24px 22px;box-shadow:0 1px 3px rgba(0,0,0,.08);border-top:4px solid var(--accent)}
+.mode h3{margin:0 0 4px;font-size:1.18rem}
+.mode .mode-sub{margin:0 0 12px;color:#666;font-size:14px}
+.mode ul{margin:0;padding-left:20px}
+.mode li{margin:6px 0;color:#333;font-size:14px}
+@media(max-width:640px){.modes{grid-template-columns:1fr}}
+
+/* Hunt wheel — the color palette section as a radial color→montage figure. */
+.colors{--wheel:min(88vw,660px)}
+.colors>p{max-width:56ch}
+.hunt-wheel{position:relative;width:var(--wheel);height:var(--wheel);margin:38px auto 14px;animation:wheelIn .6s cubic-bezier(.2,.7,.3,1) both}
+.hunt-wheel::before,.hunt-wheel::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none}
+.hunt-wheel::before{width:63%;height:63%;border:1px dashed rgba(0,0,0,.12)}
+.hunt-wheel::after{width:88%;height:88%;border:1px solid rgba(0,0,0,.05)}
+.spoke{position:static;color:inherit}
+.mon,.dot{position:absolute;transform:translate(-50%,-50%);transition:transform .18s ease,box-shadow .18s ease}
+.mon{width:calc(var(--wheel)*var(--mon));height:calc(var(--wheel)*var(--mon));border-radius:calc(var(--wheel)*var(--mon)*.2);overflow:hidden;background:#fff;box-shadow:0 0 0 3px #fff,0 6px 16px rgba(0,0,0,.18);z-index:1}
+.mon img{width:100%;height:100%;object-fit:cover}
+.dot{width:calc(var(--wheel)*var(--dot));height:calc(var(--wheel)*var(--dot));border-radius:50%;box-shadow:0 0 0 3px #fff,0 2px 6px rgba(0,0,0,.22);z-index:2}
+.tip{position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);display:inline-flex;gap:5px;white-space:nowrap;background:#111;color:#fff;font-size:11px;font-weight:600;padding:4px 9px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .14s;font-variant-numeric:tabular-nums}
+.tip b{font-weight:700}
+.spoke:hover,.spoke:focus-visible{text-decoration:none;outline:none}
+.spoke:hover .mon,.spoke:focus-visible .mon{transform:translate(-50%,-50%) scale(1.16);box-shadow:0 0 0 3px #fff,0 16px 32px rgba(0,0,0,.3);z-index:6}
+.spoke:hover .dot,.spoke:focus-visible .dot{transform:translate(-50%,-50%) scale(1.28);z-index:7}
+.spoke:hover .tip,.spoke:focus-visible .tip{opacity:1}
+.spoke:focus-visible .mon,.spoke:focus-visible .dot{outline:3px solid var(--accent-700);outline-offset:2px}
+.wheel-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38%;height:38%;border-radius:50%;background:var(--accent);color:var(--on-accent);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 6%;box-shadow:0 0 0 9px rgba(255,255,255,.5),0 12px 34px rgba(0,0,0,.2);z-index:3}
+.core-lede{font-weight:800;letter-spacing:-.03em;line-height:.92;font-size:calc(var(--wheel)*.062)}
+.core-sub{margin-top:.7em;font-size:calc(var(--wheel)*.019);font-weight:600;letter-spacing:.02em;opacity:.85}
+@keyframes wheelIn{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:none}}
+
+.wheel-list{display:none;list-style:none;padding:0}
+@media(max-width:720px){
+.hunt-wheel{display:none}
+.wheel-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:22px 0}
+.wheel-list a{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:9px 12px;color:#191919}
+.wheel-list a:hover{text-decoration:none;border-color:rgba(0,0,0,.2)}
+.wheel-list .ld{width:16px;height:16px;border-radius:50%;flex:0 0 auto;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.wheel-list .ln{font-weight:600;font-size:14px}
+.wheel-list .lh{margin-left:auto;font-size:12px;color:#888;font-variant-numeric:tabular-nums}
+}
+@media(max-width:400px){.wheel-list{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.hunt-wheel{animation:none}.mon,.dot,.tip{transition:none}}
 
 .color-hero{background:var(--accent);color:var(--on-accent);border-radius:26px;padding:40px 34px;margin:26px 0}
 .color-hero .eyebrow{font-size:13px;letter-spacing:.05em;text-transform:uppercase;opacity:.82;font-weight:600}
@@ -116,6 +161,7 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <nav class="head-nav">
 <a href="/colorcollect-site/color-of-the-day/">Today's color</a>
 <a href="/colorcollect-site/#colors">Colors</a>
+<a href="/colorcollect-site/play-with-friends/">Play with friends</a>
 <a class="nav-cta" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=nav">Get the app</a>
 </nav></div></header>
 <main class="wrap">
@@ -149,9 +195,7 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <p>Pick Magenta, photograph real-world matches — a magenta door, flower, or wall — and snap them into a montage you can save and share.</p>
 <div class="badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=color_magenta" aria-label="Get ColorCollect on Google Play">
 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 3.2 14.2 12 4 20.8c-.32-.2-.5-.55-.5-.98V4.18c0-.43.18-.78.5-.98z" fill="#fff"/></svg>
-<span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a><a class="store-badge" href="https://apps.apple.com/app/id6784390996" aria-label="Download ColorCollect on the App Store">
-<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="#fff"/></svg>
-<span class="store-badge-txt"><small>Download on the</small><strong>App Store</strong></span></a></div>
+<span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a></div>
 </section>
 
 <section>
@@ -164,7 +208,8 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <div>Hunt real-world colors into beautiful photo montages — solo or with friends.</div>
 <nav>
 <a href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=footer">Google Play</a>
-<a href="https://apps.apple.com/app/id6784390996">App Store</a>
+
+<a href="/colorcollect-site/play-with-friends/">Play with friends</a>
 <a href="https://lancimator.github.io/privacy-policy/colorcollect_privacy.html">Privacy policy</a>
 <a href="/colorcollect-site/color-of-the-day/">Color of the day</a>
 </nav>
@@ -173,5 +218,6 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <script>
 function ccCopy(t,el){try{navigator.clipboard.writeText(t);}catch(e){}var lab=el.querySelector('.js-hex');if(!lab){return;}var p=lab.getAttribute('data-hex')||lab.textContent;lab.textContent='Copied';el.classList.add('copied');setTimeout(function(){lab.textContent=p;el.classList.remove('copied');},900);}
 </script>
+
 </body>
 </html>
