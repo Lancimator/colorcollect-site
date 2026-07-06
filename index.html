@@ -6,8 +6,8 @@
 <title>ColorCollect — Photo montage color game, solo or group</title>
 <meta name="description" content="ColorCollect is a color-hunting photo game: pick a color, photograph real-world matches, and snap them into a beautiful montage. Play solo, or race friends in a live group hunt. Free, no ads.">
 <link rel="canonical" href="https://lancimator.github.io/colorcollect-site/">
-<meta name="theme-color" content="#43A047">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%2343A047'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#00ACC1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%2300ACC1'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ColorCollect">
 <meta property="og:title" content="ColorCollect — Photo montage color game, solo or group">
@@ -147,12 +147,17 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 
 .copied{outline:2px solid rgba(0,0,0,.28);outline-offset:1px}
 
+/* Room-map teaser + landscape map card. */
+.map-tease{background:#fff;border-radius:26px;padding:30px 28px;box-shadow:0 1px 3px rgba(0,0,0,.08);border-left:6px solid var(--accent)}
+.map-tease h2{margin-top:0}
+.map-card{max-width:760px}
+
 .site-foot{margin:56px 0 36px;color:#666;font-size:14px}
 .site-foot .wrap{padding-top:24px;border-top:1px solid rgba(0,0,0,.09)}
 .site-foot nav{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}
 .site-foot .handle{opacity:.7}
 
-:root{--bg:#FAFDFA;--accent:#43A047;--accent-600:#43A047;--accent-700:#357E38;--on-accent:#000000;}
+:root{--bg:#F7FEFF;--accent:#00ACC1;--accent-600:#00D4EE;--accent-700:#00ACC1;--on-accent:#000000;}
 </style>
 </head>
 <body>
@@ -185,6 +190,7 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <li>Solo mode is fully on-device and offline</li>
 <li>Live group hunts — share a 6-letter code, no accounts</li>
 <li>Vote mode: everyone picks the best shot per cell</li>
+<li>Room map — pin your favorite shots, opt-in</li>
 <li>Shareable final-standings podium card</li>
 <li>Three frame styles: contact, color pop, polaroid</li>
 <li>Beautiful, shareable results — privacy-first by design</li>
@@ -201,9 +207,19 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <p><a class="text-cta" href="/colorcollect-site/play-with-friends/">See how group hunts work →</a></p>
 </section>
 
+<section class="map-tease">
+<h2>Pin your best finds on the room map</h2>
+<p>Every group hunt comes with a shared live map. Snap a great match and — if you want to — drop it on the room's map, so everyone can see where the color was hiding. Pins pop up for the whole room in real time, turning your hunt into a little story of the neighborhood. And it's entirely up to you: <strong>nothing lands on the map unless you put it there.</strong></p>
+<figure>
+<img class="montage map-card" src="assets/room-map.png" width="1200" height="630" loading="lazy" decoding="async" alt="A ColorCollect room map for a Turquoise group hunt: a stylized city map with five photo pins marking where players found the color, and the join code HK7Q4W.">
+<figcaption>The shared room map — every pin is a photo a player chose to add.</figcaption>
+</figure>
+<p><a class="text-cta" href="/colorcollect-site/photo-map/">See how the room map works →</a></p>
+</section>
+
 <section>
 <h2>Today's color</h2>
-<p>Everyone sees the same color of the day — a shared daily hunt. Today it's <a id="home-today-link" href="/colorcollect-site/colors/green/"><strong id="home-today-name">Green</strong></a> (<span id="home-today-hex">#43A047</span>).</p>
+<p>Everyone sees the same color of the day — a shared daily hunt. Today it's <a id="home-today-link" href="/colorcollect-site/colors/teal/"><strong id="home-today-name">Teal</strong></a> (<span id="home-today-hex">#00ACC1</span>).</p>
 <p><a class="text-cta" href="/colorcollect-site/color-of-the-day/">See today's color and montage →</a></p>
 </section>
 
@@ -230,6 +246,7 @@ figcaption{color:#777;font-size:13px;margin-top:10px;text-align:center}
 <a href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=footer">Google Play</a>
 <a href="https://apps.apple.com/app/id6784390996">App Store</a>
 <a href="/colorcollect-site/play-with-friends/">Play with friends</a>
+<a href="/colorcollect-site/photo-map/">Photo map</a>
 <a href="https://lancimator.github.io/privacy-policy/colorcollect_privacy.html">Privacy policy</a>
 <a href="/colorcollect-site/color-of-the-day/">Color of the day</a>
 </nav>
