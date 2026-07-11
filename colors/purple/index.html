@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Purple color — hex #801E8C, palette &amp; montage | ColorCollect</title>
-<meta name="description" content="Purple (#801E8C): an 11-stop Purple color palette with hex codes, RGB/HSL values, color harmonies, and a photo montage. Hunt Purple with ColorCollect — free.">
+<title>Purple color — palette &amp; montage | ColorCollect</title>
+<meta name="description" content="Purple: an 11-stop Purple color palette, color harmonies, and a photo montage. Hunt Purple with ColorCollect — free.">
 <link rel="canonical" href="https://lancimator.github.io/colorcollect-site/colors/purple/">
 <meta name="theme-color" content="#801E8C">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%23801E8C'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ColorCollect">
-<meta property="og:title" content="Purple color — hex #801E8C, palette &amp; montage | ColorCollect">
-<meta property="og:description" content="Purple (#801E8C): an 11-stop Purple color palette with hex codes, RGB/HSL values, color harmonies, and a photo montage. Hunt Purple with ColorCollect — free.">
+<meta property="og:title" content="Purple color — palette &amp; montage | ColorCollect">
+<meta property="og:description" content="Purple: an 11-stop Purple color palette, color harmonies, and a photo montage. Hunt Purple with ColorCollect — free.">
 <meta property="og:image" content="https://lancimator.github.io/colorcollect-site/colors/purple/montage.jpg">
 <meta property="og:url" content="https://lancimator.github.io/colorcollect-site/colors/purple/">
 <meta name="twitter:card" content="summary_large_image">
@@ -40,7 +40,6 @@ h3{font-size:1.22rem;line-height:1.2}
 section{margin:78px 0}
 .fine{font-size:13.5px;color:var(--ink2)}
 .text-cta{font-weight:650}
-.mono-hex{font-family:var(--mono);font-size:.92em;font-variant-numeric:tabular-nums}
 
 /* ---- specimen tags ------------------------------------------------------ */
 .tag{display:inline-flex;align-items:center;gap:9px;margin:0 0 6px;font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-700)}
@@ -67,8 +66,11 @@ section{margin:78px 0}
 
 /* ---- home hero ----------------------------------------------------------- */
 .hero{position:relative;padding:56px 0 0;margin:0 0 90px}
-.ring{position:absolute;z-index:-1;top:-20px;right:min(-9vw,-70px);width:min(45vw,540px);aspect-ratio:1;border-radius:50%;background:var(--ring);-webkit-mask:radial-gradient(closest-side,transparent 64%,#000 65%,#000 88%,transparent 89%);mask:radial-gradient(closest-side,transparent 64%,#000 65%,#000 88%,transparent 89%);opacity:.65;animation:ringspin 120s linear infinite}
+.ring{position:absolute;top:-20px;right:min(-9vw,-70px);width:min(45vw,540px);aspect-ratio:1;opacity:.65;animation:ringspin 120s linear infinite}
 @keyframes ringspin{to{transform:rotate(1turn)}}
+.ring-spoke{position:absolute;left:50%;top:50%;width:var(--chip-w);height:44%;margin-left:calc(var(--chip-w) / -2);margin-top:-44%;transform-origin:50% 100%;transform:rotate(var(--a))}
+.ring-chip{display:block;position:absolute;left:0;top:0;width:100%;height:100%;clip-path:inset(0 0 73.86% 0);border-radius:3px;transform-origin:50% 13.07%;transition:transform .22s cubic-bezier(.2,.7,.3,1),filter .22s;pointer-events:auto}
+.ring-chip:hover,.ring-chip:focus-visible{transform:scale(1.5);filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));z-index:5}
 .hero h1{font-size:clamp(2.75rem,7.2vw,5.1rem);letter-spacing:-.032em;line-height:1.01;max-width:15ch;margin:.16em 0 .24em}
 .hue{display:inline-block;background:var(--accent);color:var(--on-accent);padding:.01em .16em .05em;border-radius:.16em;transform:rotate(-1.7deg);box-shadow:.06em .14em .55em color-mix(in srgb,var(--accent) 42%,transparent)}
 .lede{font-size:clamp(1.06rem,1.6vw,1.24rem);color:var(--ink2);max-width:56ch;margin:0}
@@ -139,7 +141,6 @@ section{margin:78px 0}
 .mon img{width:100%;height:100%;object-fit:cover}
 .hunt-wheel .dot{width:calc(var(--wheel)*var(--dot));height:calc(var(--wheel)*var(--dot));border-radius:50%;box-shadow:0 0 0 3px #fff,0 2px 6px rgba(0,0,0,.22);z-index:2}
 .tip{position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);display:inline-flex;gap:6px;white-space:nowrap;background:var(--ink);color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.04em;padding:5px 9px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .14s;font-variant-numeric:tabular-nums}
-.tip b{font-weight:700}
 .spoke:hover,.spoke:focus-visible{text-decoration:none;outline:none}
 .spoke:hover .mon,.spoke:focus-visible .mon{transform:translate(-50%,-50%) scale(1.16);box-shadow:0 0 0 3px #fff,0 16px 32px rgba(0,0,0,.3);z-index:6}
 .spoke:hover .dot,.spoke:focus-visible .dot{transform:translate(-50%,-50%) scale(1.28);z-index:7}
@@ -158,7 +159,6 @@ section{margin:78px 0}
 .wheel-list a:hover{text-decoration:none;border-color:var(--accent-600)}
 .wheel-list .ld{width:16px;height:16px;border-radius:5px;flex:0 0 auto;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
 .wheel-list .ln{font-weight:600;font-size:14px}
-.wheel-list .lh{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:#8b8b95;font-variant-numeric:tabular-nums}
 }
 @media(max-width:400px){.wheel-list{grid-template-columns:1fr}}
 
@@ -167,9 +167,6 @@ section{margin:78px 0}
 .color-hero .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;opacity:.85;font-weight:600;color:inherit}
 .color-hero h1{font-size:clamp(2.6rem,7vw,4.7rem);margin:.1em 0 .2em;letter-spacing:-.03em}
 .color-hero .hero-sub{opacity:.93;margin:.7em 0 0;max-width:64ch}
-.color-hero .specs{font-family:var(--mono);font-size:13.5px;letter-spacing:.02em}
-.hex-copy{background:var(--on-accent);color:var(--accent);border:none;border-radius:12px;padding:10px 18px;font-family:var(--mono);font-size:15px;font-weight:700;cursor:pointer;letter-spacing:.03em;font-variant-numeric:tabular-nums;transition:transform .15s;box-shadow:0 4px 14px -6px rgba(0,0,0,.4)}
-.hex-copy:hover{transform:translateY(-1px)}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-700);font-weight:600}
 @media(max-width:560px){.color-hero{padding:40px 26px 36px}}
 
@@ -249,7 +246,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 @keyframes printIn{from{opacity:0;transform:translateY(30px)}}
 @media(prefers-reduced-motion:reduce){
 .ring,.cta:before,.today-chip,.hunt-wheel,.hero .tag,.hero h1,.hero .lede,.hero .today-line,.hero .badges,.print{animation:none!important}
-.mon,.dot,.tip,.sw,.print,.sug,.pill,.store-badge,.nav-cta,.brand-mark,.hex-copy{transition:none}
+.mon,.dot,.tip,.sw,.print,.sug,.pill,.store-badge,.nav-cta,.brand-mark{transition:none}
 .js .rev{opacity:1;transform:none;transition:none}
 }
 
@@ -267,27 +264,24 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 </nav></div></header>
 <main class="wrap">
 <section class="color-hero">
-<div class="eyebrow">Color palette &amp; hex codes</div>
+<div class="eyebrow">Color palette &amp; names</div>
 <h1>Purple</h1>
-<button type="button" class="hex-copy" onclick="ccCopy('#801E8C',this)" aria-label="Copy #801E8C">
-<span class="js-hex" data-hex="#801E8C">#801E8C</span></button>
-<p class="hero-sub specs">rgb(128, 30, 140) · hsl(293, 65%, 33%)</p>
 </section>
 
 <section>
 <h2>The Purple tonal scale</h2>
-<p>An 11-stop scale from a near-white 50 to a near-black 950 — the same tonal ramp ColorCollect uses to theme the app around Purple. Tap a swatch to copy its hex code.</p>
-<div class="scale" role="list" aria-label="11-stop color scale"><button type="button" class="sw" role="listitem" style="background:#FDF9FE;color:#000000" onclick="ccCopy('#FDF9FE',this)" aria-label="Copy #FDF9FE, shade 50"><span class="sw-stop">50</span><span class="sw-hex js-hex" data-hex="#FDF9FE">#FDF9FE</span></button><button type="button" class="sw" role="listitem" style="background:#F9ECFB;color:#000000" onclick="ccCopy('#F9ECFB',this)" aria-label="Copy #F9ECFB, shade 100"><span class="sw-stop">100</span><span class="sw-hex js-hex" data-hex="#F9ECFB">#F9ECFB</span></button><button type="button" class="sw" role="listitem" style="background:#F1D0F5;color:#000000" onclick="ccCopy('#F1D0F5',this)" aria-label="Copy #F1D0F5, shade 200"><span class="sw-stop">200</span><span class="sw-hex js-hex" data-hex="#F1D0F5">#F1D0F5</span></button><button type="button" class="sw" role="listitem" style="background:#E5A8EC;color:#000000" onclick="ccCopy('#E5A8EC',this)" aria-label="Copy #E5A8EC, shade 300"><span class="sw-stop">300</span><span class="sw-hex js-hex" data-hex="#E5A8EC">#E5A8EC</span></button><button type="button" class="sw" role="listitem" style="background:#D677E2;color:#000000" onclick="ccCopy('#D677E2',this)" aria-label="Copy #D677E2, shade 400"><span class="sw-stop">400</span><span class="sw-hex js-hex" data-hex="#D677E2">#D677E2</span></button><button type="button" class="sw" role="listitem" style="background:#CA4ED9;color:#FFFFFF" onclick="ccCopy('#CA4ED9',this)" aria-label="Copy #CA4ED9, shade 500"><span class="sw-stop">500</span><span class="sw-hex js-hex" data-hex="#CA4ED9">#CA4ED9</span></button><button type="button" class="sw" role="listitem" style="background:#BE2DD0;color:#FFFFFF" onclick="ccCopy('#BE2DD0',this)" aria-label="Copy #BE2DD0, shade 600"><span class="sw-stop">600</span><span class="sw-hex js-hex" data-hex="#BE2DD0">#BE2DD0</span></button><button type="button" class="sw" role="listitem" style="background:#9E25AD;color:#FFFFFF" onclick="ccCopy('#9E25AD',this)" aria-label="Copy #9E25AD, shade 700"><span class="sw-stop">700</span><span class="sw-hex js-hex" data-hex="#9E25AD">#9E25AD</span></button><button type="button" class="sw" role="listitem" style="background:#801E8C;color:#FFFFFF" onclick="ccCopy('#801E8C',this)" aria-label="Copy #801E8C, shade 800"><span class="sw-stop">800</span><span class="sw-hex js-hex" data-hex="#801E8C">#801E8C</span></button><button type="button" class="sw" role="listitem" style="background:#591561;color:#FFFFFF" onclick="ccCopy('#591561',this)" aria-label="Copy #591561, shade 900"><span class="sw-stop">900</span><span class="sw-hex js-hex" data-hex="#591561">#591561</span></button><button type="button" class="sw" role="listitem" style="background:#230826;color:#FFFFFF" onclick="ccCopy('#230826',this)" aria-label="Copy #230826, shade 950"><span class="sw-stop">950</span><span class="sw-hex js-hex" data-hex="#230826">#230826</span></button></div>
+<p>An 11-stop scale from a near-white shade to a near-black shade — the same tonal ramp ColorCollect uses to theme the app around Purple. Tap a swatch to copy its name.</p>
+<div class="scale" role="list" aria-label="11-stop color scale"><button type="button" class="sw" role="listitem" style="background:#FDF9FE;color:#000000" onclick="ccCopy('Palest Purple',this)" aria-label="Copy Palest Purple, shade 50"><span class="sw-stop">50</span><span class="sw-hex js-hex" data-hex="Palest Purple">Palest Purple</span></button><button type="button" class="sw" role="listitem" style="background:#F9ECFB;color:#000000" onclick="ccCopy('Pale Purple',this)" aria-label="Copy Pale Purple, shade 100"><span class="sw-stop">100</span><span class="sw-hex js-hex" data-hex="Pale Purple">Pale Purple</span></button><button type="button" class="sw" role="listitem" style="background:#F1D0F5;color:#000000" onclick="ccCopy('Very Light Purple',this)" aria-label="Copy Very Light Purple, shade 200"><span class="sw-stop">200</span><span class="sw-hex js-hex" data-hex="Very Light Purple">Very Light Purple</span></button><button type="button" class="sw" role="listitem" style="background:#E5A8EC;color:#000000" onclick="ccCopy('Light Purple',this)" aria-label="Copy Light Purple, shade 300"><span class="sw-stop">300</span><span class="sw-hex js-hex" data-hex="Light Purple">Light Purple</span></button><button type="button" class="sw" role="listitem" style="background:#D677E2;color:#000000" onclick="ccCopy('Soft Purple',this)" aria-label="Copy Soft Purple, shade 400"><span class="sw-stop">400</span><span class="sw-hex js-hex" data-hex="Soft Purple">Soft Purple</span></button><button type="button" class="sw" role="listitem" style="background:#CA4ED9;color:#FFFFFF" onclick="ccCopy('Purple',this)" aria-label="Copy Purple, shade 500"><span class="sw-stop">500</span><span class="sw-hex js-hex" data-hex="Purple">Purple</span></button><button type="button" class="sw" role="listitem" style="background:#BE2DD0;color:#FFFFFF" onclick="ccCopy('Muted Purple',this)" aria-label="Copy Muted Purple, shade 600"><span class="sw-stop">600</span><span class="sw-hex js-hex" data-hex="Muted Purple">Muted Purple</span></button><button type="button" class="sw" role="listitem" style="background:#9E25AD;color:#FFFFFF" onclick="ccCopy('Deep Purple',this)" aria-label="Copy Deep Purple, shade 700"><span class="sw-stop">700</span><span class="sw-hex js-hex" data-hex="Deep Purple">Deep Purple</span></button><button type="button" class="sw" role="listitem" style="background:#801E8C;color:#FFFFFF" onclick="ccCopy('Dark Purple',this)" aria-label="Copy Dark Purple, shade 800"><span class="sw-stop">800</span><span class="sw-hex js-hex" data-hex="Dark Purple">Dark Purple</span></button><button type="button" class="sw" role="listitem" style="background:#591561;color:#FFFFFF" onclick="ccCopy('Very Dark Purple',this)" aria-label="Copy Very Dark Purple, shade 900"><span class="sw-stop">900</span><span class="sw-hex js-hex" data-hex="Very Dark Purple">Very Dark Purple</span></button><button type="button" class="sw" role="listitem" style="background:#230826;color:#FFFFFF" onclick="ccCopy('Darkest Purple',this)" aria-label="Copy Darkest Purple, shade 950"><span class="sw-stop">950</span><span class="sw-hex js-hex" data-hex="Darkest Purple">Darkest Purple</span></button></div>
 </section>
 
 <section>
 <h2>Purple color harmonies</h2>
 <p>Quick pairings computed from Purple's hue — handy starting points for a palette. Tap to copy.</p>
-<div class="suggest"><button type="button" class="sug" onclick="ccCopy('#2A8C1E',this)" aria-label="Copy Complementary #2A8C1E"><span class="band" style="background:#2A8C1E"></span><span class="cap"><b>Complementary</b><span class="js-hex" data-hex="#2A8C1E">#2A8C1E</span></span></button><button type="button" class="sug" onclick="ccCopy('#491E8C',this)" aria-label="Copy Analogous #491E8C"><span class="band" style="background:#491E8C"></span><span class="cap"><b>Analogous</b><span class="js-hex" data-hex="#491E8C">#491E8C</span></span></button><button type="button" class="sug" onclick="ccCopy('#8C1E61',this)" aria-label="Copy Analogous #8C1E61"><span class="band" style="background:#8C1E61"></span><span class="cap"><b>Analogous</b><span class="js-hex" data-hex="#8C1E61">#8C1E61</span></span></button></div>
+<div class="suggest"><button type="button" class="sug" onclick="ccCopy('Deep Green',this)" aria-label="Copy Complementary Deep Green"><span class="band" style="background:#2A8C1E"></span><span class="cap"><b>Complementary</b><span class="js-hex" data-hex="Deep Green">Deep Green</span></span></button><button type="button" class="sug" onclick="ccCopy('Deep Indigo',this)" aria-label="Copy Analogous Deep Indigo"><span class="band" style="background:#491E8C"></span><span class="cap"><b>Analogous</b><span class="js-hex" data-hex="Deep Indigo">Deep Indigo</span></span></button><button type="button" class="sug" onclick="ccCopy('Deep Pink',this)" aria-label="Copy Analogous Deep Pink"><span class="band" style="background:#8C1E61"></span><span class="cap"><b>Analogous</b><span class="js-hex" data-hex="Deep Pink">Deep Pink</span></span></button></div>
 </section>
 
 <figure>
-<img class="montage" src="montage.jpg" width="944" height="944" loading="lazy" decoding="async" alt="A ColorCollect photo montage in Purple (#801E8C), nine real-world photos matching the color.">
+<img class="montage" src="montage.jpg" width="944" height="944" loading="lazy" decoding="async" alt="A ColorCollect photo montage in Purple, nine real-world photos matching the color.">
 <figcaption>A Purple montage composed with ColorCollect.</figcaption>
 </figure>
 
