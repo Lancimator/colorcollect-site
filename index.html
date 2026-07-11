@@ -154,13 +154,14 @@ section{margin:78px 0}
 .wheel-list{display:none;list-style:none;padding:0}
 @media(max-width:720px){
 .hunt-wheel{display:none}
-.wheel-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:22px 0}
-.wheel-list a{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;color:var(--ink)}
+.wheel-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:22px 0}
+.wheel-list a{display:flex;align-items:center;gap:9px;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;color:var(--ink)}
 .wheel-list a:hover{text-decoration:none;border-color:var(--accent-600)}
 .wheel-list .ld{width:16px;height:16px;border-radius:5px;flex:0 0 auto;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
-.wheel-list .ln{font-weight:600;font-size:14px}
+.wheel-list .ln{font-weight:600;font-size:14px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
-@media(max-width:400px){.wheel-list{grid-template-columns:1fr}}
+@media(max-width:600px){.wheel-list{gap:7px}}
+@media(max-width:330px){.wheel-list{grid-template-columns:1fr}}
 
 /* ---- color specimen hero ---------------------------------------------------- */
 .color-hero{position:relative;overflow:hidden;background:linear-gradient(140deg,color-mix(in oklab,var(--accent) 90%,#fff) 0%,var(--accent) 46%,color-mix(in oklab,var(--accent) 84%,#000) 100%);color:var(--on-accent);border-radius:30px;padding:56px 44px 50px;margin:40px 0 70px;box-shadow:0 30px 70px -32px color-mix(in srgb,var(--accent) 55%,rgba(23,23,29,.4))}
@@ -196,6 +197,19 @@ figure{margin:36px auto;max-width:660px;background:var(--card);padding:12px 12px
 .montage{border-radius:7px;margin:0 auto;width:100%}
 figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8b8b95;padding:10px 4px;text-align:left}
 .map-fig{max-width:840px}
+
+/* ---- "hunt together" hover portraits --------------------------------------------- */
+.people-photo{position:relative}
+.people-spot{position:absolute;top:17%;height:83%;display:block;-webkit-tap-highlight-color:transparent}
+.people-spot:focus-visible{outline:none}
+.people-dot{position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;box-shadow:0 0 0 3px #fff,0 3px 10px rgba(0,0,0,.35);transition:transform .18s,box-shadow .18s}
+.people-spot:hover .people-dot,.people-spot:focus-visible .people-dot{transform:translate(-50%,-50%) scale(1.35);box-shadow:0 0 0 3px #fff,0 10px 22px rgba(0,0,0,.4)}
+.people-spot:focus-visible .people-dot{outline:2.5px solid var(--accent-700);outline-offset:3px}
+.people-pop{position:absolute;left:50%;bottom:calc(100% + 14px);transform:translate(-50%,6px);width:132px;background:var(--card);border-radius:12px;padding:7px 7px 5px;box-shadow:0 18px 40px -14px rgba(23,23,29,.5);opacity:0;pointer-events:none;transition:opacity .16s,transform .16s;z-index:6}
+.people-pop img{width:100%;height:auto;border-radius:7px;display:block}
+.people-pop-cap{display:block;text-align:center;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);padding-top:5px}
+.people-spot:hover .people-pop,.people-spot:focus-visible .people-pop{opacity:1;transform:translate(-50%,0)}
+@media(max-width:640px){.people-pop{width:104px}}
 
 /* ---- related color pills ---------------------------------------------------------- */
 .related{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
@@ -302,10 +316,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 <p class="tag"><span class="tag-dot"></span>Group mode</p>
 <h2>Hunt together</h2>
 <p>Turn any color into a party. Create a room, and ColorCollect hands you a 6-letter code — friends join with the code or an invite link, no accounts, just a name. Everyone hunts the same color in real time and every shot lands on the shared grid live. In Vote mode you all pick the best photo for each cell, then one montage is built from everyone's winning shots. The finish line is a shareable final-standings card — gold, silver, and bronze, with the join code baked in, so every share doubles as an invite.</p>
-<figure>
-<img class="montage" src="assets/group-photo.jpg" width="1600" height="873" loading="lazy" decoding="async" alt="Friends standing together, each holding up a different colored card — the same colors they are hunting in a ColorCollect group hunt.">
-<figcaption>Everyone hunts the same color together, then shares a final-standings card when the round ends.</figcaption>
-</figure>
+<figure><div class="people-photo"><img class="montage" src="assets/group-photo.jpg" width="1600" height="873" loading="lazy" decoding="async" alt="Four friends standing on a city street, each holding up a different colored card — the same colors they are hunting in a ColorCollect group hunt."><a class="people-spot" style="left:23.0%;width:14.0%" href="/colorcollect-site/colors/orange/" aria-label="Sophie is hunting Orange — see the Orange montage"><span class="people-dot" style="left:73.0%;top:45.0%;background:#FB8C00"><span class="people-pop"><img src="assets/wheel/orange.jpg" width="300" height="300" loading="lazy" decoding="async" alt="A Orange photo montage"><span class="people-pop-cap">Orange</span></span></span></a><a class="people-spot" style="left:37.0%;width:14.0%" href="/colorcollect-site/colors/blue/" aria-label="Ben is hunting Blue — see the Blue montage"><span class="people-dot" style="left:55.0%;top:45.0%;background:#1E88E5"><span class="people-pop"><img src="assets/wheel/blue.jpg" width="300" height="300" loading="lazy" decoding="async" alt="A Blue photo montage"><span class="people-pop-cap">Blue</span></span></span></a><a class="people-spot" style="left:51.0%;width:14.0%" href="/colorcollect-site/colors/green/" aria-label="David is hunting Green — see the Green montage"><span class="people-dot" style="left:45.0%;top:45.0%;background:#43A047"><span class="people-pop"><img src="assets/wheel/green.jpg" width="300" height="300" loading="lazy" decoding="async" alt="A Green photo montage"><span class="people-pop-cap">Green</span></span></span></a><a class="people-spot" style="left:65.0%;width:16.0%" href="/colorcollect-site/colors/yellow/" aria-label="Sarah is hunting Yellow — see the Yellow montage"><span class="people-dot" style="left:36.0%;top:45.0%;background:#FDD835"><span class="people-pop"><img src="assets/wheel/yellow.jpg" width="300" height="300" loading="lazy" decoding="async" alt="A Yellow photo montage"><span class="people-pop-cap">Yellow</span></span></span></a></div><figcaption>Everyone hunts the same color together, then shares a final-standings card when the round ends. Hover a friend to see the montage their color builds.</figcaption></figure>
 <p><a class="text-cta" href="/colorcollect-site/play-with-friends/">See how group hunts work →</a></p>
 </section>
 
