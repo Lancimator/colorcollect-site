@@ -5,18 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Photo map for group color hunts — pin your finds | ColorCollect</title>
 <meta name="description" content="ColorCollect group hunts have a live shared room map: pin your best photos so the whole room sees where the color was hiding. Pins are opt-in, photo by photo — nothing lands on the map unless you add it. Free.">
-<link rel="canonical" href="https://lancimator.github.io/colorcollect-site/photo-map/">
+<link rel="canonical" href="https://colorcollectapp.com/photo-map/">
 <meta name="theme-color" content="#40E0D0">
+<meta name="p:domain_verify" content="89922c28cbbb978e0cbd2eec2bd091b0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%2340E0D0'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ColorCollect">
 <meta property="og:title" content="Photo map for group color hunts — pin your finds | ColorCollect">
 <meta property="og:description" content="ColorCollect group hunts have a live shared room map: pin your best photos so the whole room sees where the color was hiding. Pins are opt-in, photo by photo — nothing lands on the map unless you add it. Free.">
-<meta property="og:image" content="https://lancimator.github.io/colorcollect-site/photo-map/room-map.png">
-<meta property="og:url" content="https://lancimator.github.io/colorcollect-site/photo-map/">
+<meta property="og:image" content="https://colorcollectapp.com/photo-map/room-map.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A ColorCollect room map with photo pins">
+<meta property="og:url" content="https://colorcollectapp.com/photo-map/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="/colorcollect-site/assets/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:200 800;font-display:swap;src:url(/colorcollect-site/assets/fonts/bricolage-var.woff2) format('woff2')}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://colorcollectapp.com/"},{"@type":"ListItem","position":2,"name":"Photo map","item":"https://colorcollectapp.com/photo-map/"}]}</script>
+
+<link rel="preload" href="/assets/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:200 800;font-display:swap;src:url(/assets/fonts/bricolage-var.woff2) format('woff2')}
 /* ---- base + tokens ------------------------------------------------------ */
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -188,9 +194,13 @@ section{margin:78px 0}
 .sw:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
 .sw-stop{font-family:var(--mono);font-size:11px;font-weight:700;opacity:.85;letter-spacing:.04em}
 .sw-hex{font-family:var(--mono);font-size:11.5px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sw-lab{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:0}
+.sw-code{font-family:var(--mono);font-size:10.5px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;opacity:0;transition:opacity .18s}
+.sw:hover .sw-code,.sw:focus-visible .sw-code,.sug:hover .sw-code,.sug:focus-visible .sw-code{opacity:.85}
 @media(max-width:600px){
 .scale{flex-direction:column}
 .sw{height:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:13px 16px}
+.sw-lab{align-items:flex-end}
 }
 
 /* ---- harmony cards ------------------------------------------------------------ */
@@ -201,6 +211,12 @@ section{margin:78px 0}
 .sug .cap{display:block;padding:10px 13px}
 .sug .cap b{display:block;font-size:13px}
 .sug .cap .js-hex{font-family:var(--mono);font-size:11.5px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.sug .cap .sw-code{display:block;color:var(--ink2)}
+
+/* ---- FAQ cards ---------------------------------------------------------------- */
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin:14px 0;box-shadow:0 14px 34px -24px rgba(23,23,29,.35)}
+.faq-item h3{margin:0 0 6px}
+.faq-item p{margin:0;color:var(--ink2);font-size:14.5px}
 
 /* ---- figures as prints ---------------------------------------------------------- */
 figure{margin:36px auto;max-width:660px;background:var(--card);padding:12px 12px 2px;border-radius:16px;box-shadow:0 2px 5px rgba(23,23,29,.06),0 30px 60px -26px rgba(23,23,29,.35)}
@@ -279,11 +295,11 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 </head>
 <body>
 <header class="site-head"><div class="wrap head-in">
-<a class="brand" href="/colorcollect-site/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>ColorCollect</a>
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>ColorCollect</a>
 <nav class="head-nav">
-<a href="/colorcollect-site/color-of-the-day/">Today's color</a>
-<a href="/colorcollect-site/#colors">Colors</a>
-<a href="/colorcollect-site/play-with-friends/">Play with friends</a>
+<a href="/color-of-the-day/">Today's color</a>
+<a href="/#colors">Colors</a>
+<a href="/play-with-friends/">Play with friends</a>
 <a class="nav-cta" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=nav">Get the app</a>
 </nav></div></header>
 <main class="wrap">
@@ -301,7 +317,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 <section>
 <h2>How the room map works</h2>
 <ol class="steps">
-<li><b>Start or join a group hunt</b><span>Spin up a room or hop in with a 6-letter code, then everyone hunts the same color together. <a href="/colorcollect-site/play-with-friends/">See how group hunts work →</a></span></li>
+<li><b>Start or join a group hunt</b><span>Spin up a room or hop in with a 6-letter code, then everyone hunts the same color together. <a href="/play-with-friends/">See how group hunts work →</a></span></li>
 <li><b>Hunt and snap</b><span>Photograph real-world matches as you spot them — a turquoise door, a tiled pool, a strip of morning sky.</span></li>
 <li><b>Pin the ones you love — opt-in</b><span>Tap a shot to drop it on the room's shared map. It's your call, photo by photo; skip any you'd rather keep to yourself.</span></li>
 <li><b>Watch the map fill up, live</b><span>Pins from everyone in the room appear in real time, so the map becomes a shared picture of where the color turned up.</span></li>
@@ -332,7 +348,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 <section>
 <h2>The map is one half of the hunt</h2>
 <p>The room map shows where the color turned up; the group hunt itself turns everyone's winning shots into one shared montage plus a final-standings card. They go hand in hand — start a hunt, then decide what to put on the map.</p>
-<p><a class="text-cta" href="/colorcollect-site/play-with-friends/">See how group hunts work →</a></p>
+<p><a class="text-cta" href="/play-with-friends/">See how group hunts work →</a></p>
 </section>
 
 <section class="cta">
@@ -343,7 +359,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 <span class="store-badge-txt"><small>GET IT ON</small><strong>Google Play</strong></span></a><a class="store-badge" href="https://apps.apple.com/app/id6784390996" aria-label="Download ColorCollect on the App Store">
 <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="currentColor"/></svg>
 <span class="store-badge-txt"><small>Download on the</small><strong>App Store</strong></span></a></div>
-<p class="fine"><a class="text-cta" href="/colorcollect-site/play-with-friends/">Or read the full group-mode guide →</a></p>
+<p class="fine"><a class="text-cta" href="/play-with-friends/">Or read the full group-mode guide →</a></p>
 </section>
 </main>
 <footer class="site-foot"><div class="wrap">
@@ -351,10 +367,13 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 <nav>
 <a href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=footer">Google Play</a>
 <a href="https://apps.apple.com/app/id6784390996">App Store</a>
-<a href="/colorcollect-site/play-with-friends/">Play with friends</a>
-<a href="/colorcollect-site/photo-map/">Photo map</a>
+<a href="/play-with-friends/">Play with friends</a>
+<a href="/photo-map/">Photo map</a>
+<a href="/color-scavenger-hunt/">Scavenger hunt guide</a>
+<a href="/photo-scavenger-hunt-app/">Photo hunt app</a>
+<a href="/long-distance-friends-games/">Long-distance games</a>
 <a href="https://lancimator.github.io/privacy-policy/colorcollect_privacy.html">Privacy policy</a>
-<a href="/colorcollect-site/color-of-the-day/">Color of the day</a>
+<a href="/color-of-the-day/">Color of the day</a>
 </nav>
 <div class="handle">@colorcollectapp</div>
 </div></footer>
