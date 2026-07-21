@@ -317,7 +317,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 <section class="color-hero">
 <div class="eyebrow">Legal</div>
 <h1>Privacy policy</h1>
-<p class="hero-sub">Last updated: 2026-06-28. This document explains what data the ColorCollect app ("the app", "we") collects, why, and how long it stays around. This is not legal advice.</p>
+<p class="hero-sub">Last updated: 2026-07-21. This document explains what data the ColorCollect app ("the app", "we") and this website collect, why, and how long it stays around. This is not legal advice.</p>
 </section>
 
 <section>
@@ -327,7 +327,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 <li><b>Group mode</b> — photos and a chosen display name are sent to our backend (Supabase) so the people in your room can see them. Photos are auto-deleted from the server shortly after the room is finalized (typically within an hour), and at most 24 hours after a room goes inactive.</li>
 <li><b>Optional geotagging</b> — if you opt in, GPS coordinates are saved locally with each photo. They are not sent to our servers unless you also opt in to sharing a photo's location with your group room.</li>
 <li><b>Optional crash reports</b> — off by default. You can opt in from Settings → Privacy.</li>
-<li>We do <b>not</b> sell your data. We do not show ads. There are no third-party trackers.</li>
+<li>We do <b>not</b> sell your data and we do not show ads. The <b>app</b> contains no third-party trackers; this <b>website</b> uses Google Analytics, but only after you accept cookies (see section 6).</li>
 <li><b>Optional in-app purchases</b> — an optional premium unlock and optional donations (a "tip jar"). Payment is handled entirely by the App Store / Google Play; we never see or store your payment details. All core features remain free.</li>
 </ul>
 </section>
@@ -402,7 +402,12 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 
 <section>
 <h2>6. Cookies & trackers</h2>
+<h3>6.1 In the app</h3>
 <p>The app does not use cookies, advertising identifiers, or third-party trackers. We do not integrate Facebook SDK, Google Ads, or similar.</p>
+<h3>6.2 On this website</h3>
+<p>This website (the marketing and link-in-bio site) uses <b>Google Analytics (GA4)</b> to understand aggregate traffic — for example how many people visit, which pages they view, and roughly where visitors come from. Google Analytics sets cookies to do this.</p>
+<p>Analytics is <b>consent-gated</b>: by default we tell Google to store nothing (<code>analytics_storage</code> and <code>ad_storage</code> are set to "denied"), so no analytics cookies are written and no data is sent until you press <b>Accept</b> on the cookie banner. If you press <b>Decline</b> (or ignore the banner), analytics stays off. Your choice is remembered in your browser's local storage so we don't ask again; you can reset it by clearing this site's site data in your browser.</p>
+<p>We use analytics only in aggregate. We do <b>not</b> use it for advertising, ad personalization, or to build a profile of you — <code>ad_storage</code>, <code>ad_user_data</code>, and <code>ad_personalization</code> are left denied even after you accept. Google processes this data as described in <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The website does not integrate Facebook SDK, Google Ads, or similar.</p>
 </section>
 
 <section>
