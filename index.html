@@ -6,9 +6,10 @@
 <title>ColorCollect — Color Scavenger Hunt &amp; Photo Montage Game</title>
 <meta name="description" content="ColorCollect is a color scavenger hunt photo game: pick a color, photograph real-world matches, and snap them into a beautiful photo montage. Play solo, or race friends in a live group hunt. Free, no ads.">
 <link rel="canonical" href="https://colorcollectapp.com/">
-<meta name="theme-color" content="#D81B60">
+<meta name="theme-color" content="#8D6E63">
 <meta name="p:domain_verify" content="89922c28cbbb978e0cbd2eec2bd091b0">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%23D81B60'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/assets/icon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ColorCollect">
 <meta property="og:title" content="ColorCollect — Color Scavenger Hunt &amp; Photo Montage Game">
@@ -58,12 +59,8 @@ section{margin:78px 0}
 .head-in{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
 .brand{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;color:var(--ink);font-size:19px}
 .brand:hover{text-decoration:none}
-.brand-mark{display:grid;grid-template-columns:1fr 1fr;gap:2.5px;width:21px;height:21px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.brand-mark{width:21px;height:21px;border-radius:5px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .brand:hover .brand-mark{transform:rotate(90deg)}
-.brand-mark i{border-radius:4.5px;background:var(--accent)}
-.brand-mark i:nth-child(2){background:color-mix(in oklab,var(--accent) 55%,#fff)}
-.brand-mark i:nth-child(3){background:var(--accent-700)}
-.brand-mark i:nth-child(4){background:color-mix(in oklab,var(--accent) 24%,#fff)}
 .head-nav{display:flex;align-items:center;gap:22px;font-size:14.5px}
 .head-nav a{color:var(--ink2);font-weight:600}
 .head-nav a:hover{color:var(--ink);text-decoration:none}
@@ -300,14 +297,14 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 .js .rev{opacity:1;transform:none;transition:none}
 }
 
-:root{--bg:#FEF8FA;--accent:#D81B60;--accent-600:#D81B60;--accent-700:#A9154B;--on-accent:#FFFFFF;--ring:conic-gradient(from -8deg,#E53935 0.00deg 11.81deg,transparent 11.81deg 14.40deg,#F4511E 14.40deg 26.21deg,transparent 26.21deg 28.80deg,#8D6E63 28.80deg 40.61deg,transparent 40.61deg 43.20deg,#FF7F50 43.20deg 55.01deg,transparent 55.01deg 57.60deg,#FB8C00 57.60deg 69.41deg,transparent 69.41deg 72.00deg,#FFC000 72.00deg 83.81deg,transparent 83.81deg 86.40deg,#FDD835 86.40deg 98.21deg,transparent 98.21deg 100.80deg,#FFD700 100.80deg 112.61deg,transparent 112.61deg 115.20deg,#7CB342 115.20deg 127.01deg,transparent 127.01deg 129.60deg,#43A047 129.60deg 141.41deg,transparent 141.41deg 144.00deg,#146432 144.00deg 155.81deg,transparent 155.81deg 158.40deg,#40E0D0 158.40deg 170.21deg,transparent 170.21deg 172.80deg,#26A69A 172.80deg 184.61deg,transparent 184.61deg 187.20deg,#00ACC1 187.20deg 199.01deg,transparent 199.01deg 201.60deg,#78C8EB 201.60deg 213.41deg,transparent 213.41deg 216.00deg,#546E7A 216.00deg 227.81deg,transparent 227.81deg 230.40deg,#1E88E5 230.40deg 242.21deg,transparent 242.21deg 244.80deg,#141E5A 244.80deg 256.61deg,transparent 256.61deg 259.20deg,#5E35B1 259.20deg 271.01deg,transparent 271.01deg 273.60deg,#4B0082 273.60deg 285.41deg,transparent 285.41deg 288.00deg,#801E8C 288.00deg 299.81deg,transparent 299.81deg 302.40deg,#DC28C8 302.40deg 314.21deg,transparent 314.21deg 316.80deg,#D81B60 316.80deg 328.61deg,transparent 328.61deg 331.20deg,#EC407A 331.20deg 343.01deg,transparent 343.01deg 345.60deg,#961428 345.60deg 357.41deg,transparent 357.41deg 360.00deg);}
+:root{--bg:#FCFBFB;--accent:#8D6E63;--accent-600:#8D6E63;--accent-700:#6F564E;--on-accent:#FFFFFF;--ring:conic-gradient(from -8deg,#E53935 0.00deg 11.81deg,transparent 11.81deg 14.40deg,#F4511E 14.40deg 26.21deg,transparent 26.21deg 28.80deg,#8D6E63 28.80deg 40.61deg,transparent 40.61deg 43.20deg,#FF7F50 43.20deg 55.01deg,transparent 55.01deg 57.60deg,#FB8C00 57.60deg 69.41deg,transparent 69.41deg 72.00deg,#FFC000 72.00deg 83.81deg,transparent 83.81deg 86.40deg,#FDD835 86.40deg 98.21deg,transparent 98.21deg 100.80deg,#FFD700 100.80deg 112.61deg,transparent 112.61deg 115.20deg,#7CB342 115.20deg 127.01deg,transparent 127.01deg 129.60deg,#43A047 129.60deg 141.41deg,transparent 141.41deg 144.00deg,#146432 144.00deg 155.81deg,transparent 155.81deg 158.40deg,#40E0D0 158.40deg 170.21deg,transparent 170.21deg 172.80deg,#26A69A 172.80deg 184.61deg,transparent 184.61deg 187.20deg,#00ACC1 187.20deg 199.01deg,transparent 199.01deg 201.60deg,#78C8EB 201.60deg 213.41deg,transparent 213.41deg 216.00deg,#546E7A 216.00deg 227.81deg,transparent 227.81deg 230.40deg,#1E88E5 230.40deg 242.21deg,transparent 242.21deg 244.80deg,#141E5A 244.80deg 256.61deg,transparent 256.61deg 259.20deg,#5E35B1 259.20deg 271.01deg,transparent 271.01deg 273.60deg,#4B0082 273.60deg 285.41deg,transparent 285.41deg 288.00deg,#801E8C 288.00deg 299.81deg,transparent 299.81deg 302.40deg,#DC28C8 302.40deg 314.21deg,transparent 314.21deg 316.80deg,#D81B60 316.80deg 328.61deg,transparent 328.61deg 331.20deg,#EC407A 331.20deg 343.01deg,transparent 343.01deg 345.60deg,#961428 345.60deg 357.41deg,transparent 357.41deg 360.00deg);}
 </style>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});gtag('js', new Date());gtag('config', 'G-K3B361ZJLR');</script>
 <script async src='https://www.googletagmanager.com/gtag/js?id=G-K3B361ZJLR'></script>
 </head>
 <body>
 <header class="site-head"><div class="wrap head-in">
-<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>ColorCollect</a>
+<a class="brand" href="/"><img class="brand-mark" src="/assets/icon.png" width="21" height="21" alt="" aria-hidden="true">ColorCollect</a>
 <nav class="head-nav">
 <a href="/color-of-the-day/">Today's color</a>
 <a href="/#colors">Colors</a>
@@ -322,7 +319,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 <p class="lede">Pick a color, find real-world things that match — a red door, a yellow flower, a strip of evening sky — and your shots snap into a montage you can save and share. Hunt solo, or race your friends in a live group hunt.</p>
 <div class="today-line">
 <span class="today-chip" aria-hidden="true"></span>
-<span>Today everyone's hunting <a id="home-today-link" href="/colors/pink/"><b id="home-today-name">Pink</b></a></span>
+<span>Today everyone's hunting <a id="home-today-link" href="/colors/brown/"><b id="home-today-name">Brown</b></a></span>
 <a class="text-cta" href="/color-of-the-day/">See today's color →</a>
 </div>
 <div class="badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=hero" aria-label="Get ColorCollect on Google Play">

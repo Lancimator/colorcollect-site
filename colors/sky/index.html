@@ -8,7 +8,8 @@
 <link rel="canonical" href="https://colorcollectapp.com/colors/sky/">
 <meta name="theme-color" content="#78C8EB">
 <meta name="p:domain_verify" content="89922c28cbbb978e0cbd2eec2bd091b0">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%2378C8EB'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/assets/icon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ColorCollect">
 <meta property="og:title" content="Sky Color — Shades, Names &amp; Palette | ColorCollect">
@@ -57,12 +58,8 @@ section{margin:78px 0}
 .head-in{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
 .brand{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;color:var(--ink);font-size:19px}
 .brand:hover{text-decoration:none}
-.brand-mark{display:grid;grid-template-columns:1fr 1fr;gap:2.5px;width:21px;height:21px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.brand-mark{width:21px;height:21px;border-radius:5px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .brand:hover .brand-mark{transform:rotate(90deg)}
-.brand-mark i{border-radius:4.5px;background:var(--accent)}
-.brand-mark i:nth-child(2){background:color-mix(in oklab,var(--accent) 55%,#fff)}
-.brand-mark i:nth-child(3){background:var(--accent-700)}
-.brand-mark i:nth-child(4){background:color-mix(in oklab,var(--accent) 24%,#fff)}
 .head-nav{display:flex;align-items:center;gap:22px;font-size:14.5px}
 .head-nav a{color:var(--ink2);font-weight:600}
 .head-nav a:hover{color:var(--ink);text-decoration:none}
@@ -306,7 +303,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 </head>
 <body>
 <header class="site-head"><div class="wrap head-in">
-<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>ColorCollect</a>
+<a class="brand" href="/"><img class="brand-mark" src="/assets/icon.png" width="21" height="21" alt="" aria-hidden="true">ColorCollect</a>
 <nav class="head-nav">
 <a href="/color-of-the-day/">Today's color</a>
 <a href="/#colors">Colors</a>
