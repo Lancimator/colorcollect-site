@@ -373,7 +373,7 @@ document.documentElement.classList.add('apple');
 var go=function(){var a=document.querySelectorAll('a[data-ios]');for(var i=0;i<a.length;i++){a[i].href=a[i].getAttribute('data-ios');}};
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}
 })();</script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});gtag('js', new Date());gtag('config', 'G-K3B361ZJLR');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var ccGranted=false;try{ccGranted=localStorage.getItem('cc_consent')==='granted';}catch(e){}gtag('consent','default',{'ad_storage':ccGranted?'granted':'denied','analytics_storage':ccGranted?'granted':'denied','ad_user_data':ccGranted?'granted':'denied','ad_personalization':ccGranted?'granted':'denied'});gtag('js', new Date());gtag('config', 'G-K3B361ZJLR');</script>
 <script async src='https://www.googletagmanager.com/gtag/js?id=G-K3B361ZJLR'></script>
 </head>
 <body>
