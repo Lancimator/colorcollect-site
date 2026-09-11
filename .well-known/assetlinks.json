@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "dev.colorcollect.color_collect",
+      "sha256_cert_fingerprints": [
+        "A0:5F:E6:25:72:F8:64:5A:4D:16:6A:13:F1:F2:3F:7C:1B:95:4D:22:7E:37:7A:AF:37:B3:17:E2:CE:60:CD:A4"
+      ]
+    }
+  }
+]
