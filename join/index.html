@@ -41,13 +41,10 @@
   </div>
 
   <script>
-    // Android applicationId — must match android/app/build.gradle.kts.
     var PACKAGE = "dev.colorcollect.color_collect";
-    // Numeric App Store ID — must match AppConfig.appStoreId.
     var APP_STORE_ID = "6784390996";
 
     var params = new URLSearchParams(window.location.search);
-    // Code may arrive as ?code=ABC123 or as a path segment /join/ABC123.
     var code = (params.get("code") || "").toUpperCase();
     if (!code) {
       var parts = window.location.pathname.split("/").filter(Boolean);
@@ -56,13 +53,9 @@
     }
     var ref = params.get("ref") || "";
 
-    // Send iOS recipients to the App Store, everyone else to Google Play.
-    // (iPadOS 13+ masquerades as macOS, hence the maxTouchPoints check.)
     var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
                 (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
 
-    // Play Store URL. The referrer is forwarded so a future deferred-deeplink
-    // (Play Install Referrer) build can recover it; harmless today.
     var referrer = "code=" + encodeURIComponent(code) + (ref ? "&ref=" + encodeURIComponent(ref) : "");
     var playUrl = "https://play.google.com/store/apps/details?id=" + PACKAGE +
                   "&referrer=" + encodeURIComponent(referrer);
@@ -72,7 +65,6 @@
     var storeEl = document.getElementById("store");
     storeEl.href = storeUrl;
 
-    // Always surface the other store too (e.g. someone reading on desktop).
     var altEl = document.getElementById("alt");
     altEl.href = isIOS ? playUrl : appStoreUrl;
     altEl.textContent = isIOS ? "Also on Google Play" : "Also on the App Store";
@@ -83,15 +75,11 @@
       codeEl.hidden = false;
     }
 
-    // Belt-and-suspenders: if the app is installed but App Link verification
-    // hasn't kicked in (e.g. first run before the OS verifies the domain), the
-    // custom scheme still hands off to the app.
     var appUrl = "colorcollect://join/" + encodeURIComponent(code) + (ref ? "?ref=" + encodeURIComponent(ref) : "");
     if (code) {
       try { window.location.href = appUrl; } catch (e) {}
     }
 
-    // If we're still here after a moment, the app isn't installed → store.
     setTimeout(function () {
       document.getElementById("status").textContent =
         "Don't have the app yet? Install it to join.";
