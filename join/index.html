@@ -34,16 +34,33 @@
     <div class="code" id="code" hidden></div>
     <a class="btn" id="store" href="#">Get ColorCollect free</a>
     <p class="muted"><a id="alt" href="#" style="color: inherit"></a></p>
-    <p class="muted">
-      If the app is installed it should open automatically. Otherwise install it,
-      then come back and tap this link again (or enter the code above in the app).
+    <p class="muted" id="manual">
+      If the app is installed it should open automatically. Otherwise install it
+      and open ColorCollect &mdash; it will offer to join this room. Or tap
+      <b>Have a room code?</b> / <b>Join</b> and enter the code above.
     </p>
   </div>
 
   <script>
     var PACKAGE = "dev.colorcollect.color_collect";
     var APP_STORE_ID = "6784390996";
-
+    function copyLink(text) {
+      if (!text) return;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).catch(function () {});
+          return;
+        }
+      } catch (e) {}
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.setAttribute("readonly", "");
+        ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      } catch (e) {}
+    }
     var params = new URLSearchParams(window.location.search);
     var code = (params.get("code") || "").toUpperCase();
     if (!code) {
@@ -62,8 +79,21 @@
     var appStoreUrl = "https://apps.apple.com/app/id" + APP_STORE_ID;
     var storeUrl = isIOS ? appStoreUrl : playUrl;
 
+    // What the app looks for on first launch (DeferredLinks.fromText): the
+    // canonical invite link, copied when the visitor taps through to the store.
+    var inviteLink = code
+      ? "https://colorcollectapp.com/join/?code=" + encodeURIComponent(code) +
+        (ref ? "&ref=" + encodeURIComponent(ref) : "")
+      : "";
+
     var storeEl = document.getElementById("store");
     storeEl.href = storeUrl;
+    storeEl.addEventListener("click", function (ev) {
+      if (!inviteLink) return;
+      ev.preventDefault();
+      copyLink(inviteLink);
+      setTimeout(function () { window.location.href = storeUrl; }, 150);
+    });
 
     var altEl = document.getElementById("alt");
     altEl.href = isIOS ? playUrl : appStoreUrl;
@@ -83,7 +113,10 @@
     setTimeout(function () {
       document.getElementById("status").textContent =
         "Don't have the app yet? Install it to join.";
-      window.location.href = storeUrl;
+      // Android carries the code through the Play install referrer, so it can
+      // go straight on. iOS can only carry it on the clipboard, which needs
+      // the tap on the button above.
+      if (!isIOS) window.location.href = storeUrl;
     }, 1200);
   </script>
 </body>
