@@ -1,0 +1,27 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "6YLU3879RS.dev.colorcollect.colorCollect"
+        ],
+        "components": [
+          {
+            "/": "/join",
+            "comment": "group invite (?code=…&ref=…)"
+          },
+          {
+            "/": "/join/*"
+          },
+          {
+            "/": "/m",
+            "comment": "shared montage (?id=…)"
+          },
+          {
+            "/": "/m/*"
+          }
+        ]
+      }
+    ]
+  }
+}

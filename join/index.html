@@ -74,9 +74,15 @@
                 (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
 
     var referrer = "code=" + encodeURIComponent(code) + (ref ? "&ref=" + encodeURIComponent(ref) : "");
+    // Invitees land on the group-first store pages (ColorCollect #20) once
+    // PLAY_LISTING_FRIENDS / APP_STORE_PPID_FRIENDS are set; empty = default.
+    var PLAY_LISTING = "";
+    var APP_STORE_PPID = "";
     var playUrl = "https://play.google.com/store/apps/details?id=" + PACKAGE +
+                  (PLAY_LISTING ? "&listing=" + PLAY_LISTING : "") +
                   "&referrer=" + encodeURIComponent(referrer);
-    var appStoreUrl = "https://apps.apple.com/app/id" + APP_STORE_ID;
+    var appStoreUrl = "https://apps.apple.com/app/id" + APP_STORE_ID +
+                      (APP_STORE_PPID ? "?ppid=" + APP_STORE_PPID : "");
     var storeUrl = isIOS ? appStoreUrl : playUrl;
 
     // What the app looks for on first launch (DeferredLinks.fromText): the

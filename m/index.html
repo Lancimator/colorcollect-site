@@ -90,6 +90,10 @@
     }
     // Same shape the app's DeepLinkService.parseMontage insists on.
     if (!/^[0-9a-f]{16}$/.test(id)) id = "";
+    // The sharer's watermark wording arm (app issue #28), passed on to the app
+    // so its share_link_opened event can be compared per arm.
+    var wm = (params.get("wm") || "").toLowerCase();
+    if (!/^[a-z_]{1,12}$/.test(wm)) wm = "";
 
     var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
                 (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
@@ -121,7 +125,9 @@
 
     function openApp() {
       if (id) {
-        try { window.location.href = "colorcollect://m/" + id; } catch (e) {}
+        try {
+          window.location.href = "colorcollect://m/" + id + (wm ? "?wm=" + wm : "");
+        } catch (e) {}
       }
     }
     var huntEl = document.getElementById("hunt");
