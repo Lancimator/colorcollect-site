@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://colorcollectapp.com/play-with-friends/">
 <meta name="theme-color" content="#FF7F50">
 <meta name="p:domain_verify" content="89922c28cbbb978e0cbd2eec2bd091b0">
-<link rel="icon" type="image/png" href="/assets/icon.png">
-<link rel="apple-touch-icon" href="/assets/icon.png">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="ColorCollect">
@@ -26,6 +26,8 @@
 <meta name="twitter:image" content="https://colorcollectapp.com/play-with-friends/og.jpg">
 <meta name="twitter:image:alt" content="A ColorCollect final-standings podium card">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do my friends need an account to join a hunt?","acceptedAnswer":{"@type":"Answer","text":"No. Friends join with the 6-letter room code or a tap-to-open invite link and just pick a display name — no signup, no email."}},{"@type":"Question","name":"How many people can play a group hunt?","acceptedAnswer":{"@type":"Answer","text":"A room comfortably fits a handful of friends — the grid splits between everyone in Assigned mode, and in Vote mode any number of players can submit photos for any cell."}},{"@type":"Question","name":"Can we play from different cities?","acceptedAnswer":{"@type":"Answer","text":"Yes — everyone just needs the app and the room code. Each player hunts the color wherever they are, and every shot lands on the shared grid live, which makes it a great game for long-distance friends."}},{"@type":"Question","name":"Is the group mode free?","acceptedAnswer":{"@type":"Answer","text":"Yes. ColorCollect is free with no ads — creating rooms, joining, voting, and sharing the final montage are all included."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://colorcollectapp.com/play-with-friends/#webpage","url":"https://colorcollectapp.com/play-with-friends/","name":"Color scavenger hunt with friends | ColorCollect","description":"Play a live color scavenger hunt with friends, together or long-distance: share a 6-letter code, photograph the same color, vote, and build one montage.","inLanguage":"en","isPartOf":{"@type":"WebSite","@id":"https://colorcollectapp.com/#website","name":"ColorCollect","url":"https://colorcollectapp.com/"},"publisher":{"@id":"https://colorcollectapp.com/#org"},"about":{"@id":"https://colorcollectapp.com/#app"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://colorcollectapp.com/#org","name":"ColorCollect","alternateName":"ColorCollect app","url":"https://colorcollectapp.com/","logo":"https://colorcollectapp.com/assets/icon.png","description":"Maker of ColorCollect, a free color scavenger hunt photo game for Android and iOS.","sameAs":["https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect","https://apps.apple.com/app/id6784390996","https://www.tiktok.com/@colorcollectapp","https://www.instagram.com/colorcollectapp/","https://www.facebook.com/profile.php?id=61591778652485","https://www.youtube.com/@colorcollectapp","https://www.pinterest.com/colorcollectapp/"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://colorcollectapp.com/"},{"@type":"ListItem","position":2,"name":"Play with friends","item":"https://colorcollectapp.com/play-with-friends/"}]}</script>
 
 <link rel="preload" href="/assets/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -280,6 +282,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 .site-foot{margin:100px 0 46px;color:var(--ink2);font-size:14px}
 .site-foot .wrap{padding-top:30px;border-top:1px solid var(--line);display:grid;gap:14px}
 .foot-pitch{font-family:var(--disp);font-weight:650;font-size:16.5px;color:var(--ink);letter-spacing:-.01em;max-width:46ch}
+.foot-about{margin:-6px 0 0;font-size:13.5px;max-width:60ch}
 .site-foot nav{display:flex;gap:10px 24px;flex-wrap:wrap}
 .foot-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .site-foot .handle{font-family:var(--mono);font-size:12px;letter-spacing:.08em;opacity:.75}
@@ -384,7 +387,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 </head>
 <body>
 <header class="site-head"><div class="wrap head-in">
-<a class="brand" href="/"><img class="brand-mark" src="/assets/icon.png" width="21" height="21" alt="" aria-hidden="true">ColorCollect</a>
+<a class="brand" href="/"><img class="brand-mark" src="/assets/icon-42.png" width="21" height="21" alt="" aria-hidden="true">ColorCollect</a>
 <nav class="head-nav">
 <a href="/color-of-the-day/">Today's color</a>
 <a href="/#colors">Colors</a>
@@ -406,7 +409,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 </section>
 
 <figure>
-<img class="montage" src="group-photo.jpg" width="1320" height="720" loading="eager" fetchpriority="high" decoding="async" alt="Four friends standing on a city street, each holding up a different colored card — the same colors they are hunting in a ColorCollect group hunt.">
+<img class="montage" src="group-photo.jpg" srcset="group-photo-640.jpg 640w, group-photo.jpg 1320w" sizes="(max-width:708px) calc(100vw - 72px), 636px" width="1320" height="720" loading="eager" fetchpriority="high" decoding="async" alt="Four friends standing on a city street, each holding up a different colored card — the same colors they are hunting in a ColorCollect group hunt.">
 <figcaption>Everyone picks a shot for the color they are chasing — then it all comes together in one montage.</figcaption>
 </figure>
 
@@ -416,7 +419,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 </section>
 
 <figure>
-<img class="montage" src="../assets/hero-1.jpg" width="944" height="944" loading="lazy" decoding="async" alt="A ColorCollect photo montage — the kind a group hunt builds from everyone's winning shots.">
+<img class="montage" src="../assets/hero-1.jpg" srcset="../assets/hero-1-640.jpg 640w, ../assets/hero-1.jpg 944w" sizes="(max-width:708px) calc(100vw - 72px), 636px" width="944" height="944" loading="lazy" decoding="async" alt="A ColorCollect photo montage — the kind a group hunt builds from everyone's winning shots.">
 <figcaption>Everyone's winning shots compose into one shared montage.</figcaption>
 </figure>
 
@@ -477,6 +480,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 </main>
 <footer class="site-foot"><div class="wrap">
 <div class="foot-pitch">Hunt real-world colors into beautiful photo montages — solo or with friends.</div>
+<p class="foot-about">ColorCollect (colorcollectapp.com) is a color scavenger hunt photo game &mdash; not a color-picker tool.</p>
 <nav>
 <a data-store="play" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=footer">Google Play</a>
 <a data-store="ios" href="https://apps.apple.com/app/id6784390996?ct=site_footer&pt=129068609&mt=8">App Store</a>
