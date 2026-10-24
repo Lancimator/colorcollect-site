@@ -118,11 +118,12 @@ section{margin:78px 0}
 /* Apple hardware: drop the Play badge/link so the App Store one carries the
    CTA. Set from <head> before first paint — see _appleStoreScript(). */
 .apple [data-store="play"]{display:none}
-.store-badge{display:inline-flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:12px 20px;border-radius:14px;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .2s,box-shadow .2s}
-.store-badge:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 12px 24px -10px rgba(23,23,29,.55)}
-.store-badge-txt{display:flex;flex-direction:column;line-height:1.12;text-align:left}
-.store-badge-txt small{font-family:var(--mono);font-size:9px;letter-spacing:.13em;opacity:.85}
-.store-badge-txt strong{font-size:16.5px;font-weight:650}
+.badges{align-items:center}
+.store-badge{display:inline-flex;line-height:0;border-radius:9px;transition:transform .2s,box-shadow .2s}
+.store-badge:hover{text-decoration:none;transform:translateY(-2px)}
+.store-badge-img{display:block;width:auto}
+.store-badge-img.ios{height:52px}
+.store-badge-img.play{height:77px;margin:-12.5px}
 
 /* ---- feature list (swatch-square bullets) --------------------------------- */
 .features{display:grid;grid-template-columns:1fr 1fr;gap:13px 30px;margin:22px 0;padding:0;list-style:none}
@@ -266,8 +267,6 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 .cta h2{font-size:clamp(2rem,4.8vw,3.1rem);margin:0 0 .25em;color:#fff;letter-spacing:-.028em}
 .cta p{color:#c7c7cf;margin:.3em auto;max-width:60ch}
 .cta .badges{justify-content:center;margin-top:26px}
-.cta .store-badge{background:#f5f4f1;color:var(--ink)}
-.cta .store-badge:hover{box-shadow:0 12px 26px -10px rgba(0,0,0,.6)}
 .cta .fine{color:#8e8e98}
 .cta a{color:color-mix(in oklab,var(--accent) 55%,#fff)}
 
@@ -279,6 +278,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 
 /* ---- footer ------------------------------------------------------------------ */
 .site-foot{margin:100px 0 46px;color:var(--ink2);font-size:14px}
+.foot-legal{font-size:12px;opacity:.75;margin:14px 0 0}
 .site-foot .wrap{padding-top:30px;border-top:1px solid var(--line);display:grid;gap:14px}
 .foot-pitch{font-family:var(--disp);font-weight:650;font-size:16.5px;color:var(--ink);letter-spacing:-.01em;max-width:46ch}
 .foot-about{margin:-6px 0 0;font-size:13.5px;max-width:60ch}
@@ -380,8 +380,7 @@ document.documentElement.classList.add('apple');
 var go=function(){var a=document.querySelectorAll('a[data-ios]');for(var i=0;i<a.length;i++){a[i].href=a[i].getAttribute('data-ios');}};
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}
 })();</script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var ccGranted=false;try{ccGranted=localStorage.getItem('cc_consent')==='granted';}catch(e){}gtag('consent','default',{'ad_storage':ccGranted?'granted':'denied','analytics_storage':ccGranted?'granted':'denied','ad_user_data':ccGranted?'granted':'denied','ad_personalization':ccGranted?'granted':'denied'});gtag('js', new Date());gtag('config', 'G-K3B361ZJLR');</script>
-<script async src='https://www.googletagmanager.com/gtag/js?id=G-K3B361ZJLR'></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'granted','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});window.ccLoadGa=function(){if(window.ccGaLoaded)return;window.ccGaLoaded=true;gtag('js',new Date());gtag('config','G-K3B361ZJLR');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-K3B361ZJLR';document.head.appendChild(s);};try{if(localStorage.getItem('cc_consent')==='granted')ccLoadGa();}catch(e){}</script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "68a36821385e45ffa2d5e6e0cd55bd92"}'></script>
 </head>
 <body>
@@ -399,7 +398,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Terms of service</li></ol></nav><section class="color-hero">
 <div class="eyebrow">Legal</div>
 <h1>Terms of service</h1>
-<p class="hero-sub">Last updated: 2026-07-18. These terms govern your use of the ColorCollect app ("the app") and colorcollectapp.com ("the site"), operated by Liviusz Lovasz ("we", "us"). By using the app or the site, you agree to these terms. This is not legal advice.</p>
+<p class="hero-sub">Last updated: 2026-10-24. These terms govern your use of the ColorCollect app ("the app") and colorcollectapp.com ("the site"), operated by Liviusz Lovasz ("we", "us"; see the <a href="https://colorcollectapp.com/impressum/">Impressum</a> for address and contact). By using the app or the site, you agree to these terms. This is not legal advice.</p>
 </section>
 
 <section>
@@ -420,7 +419,20 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <section>
 <h2>4. Your content</h2>
 <p>You retain ownership of the photos you take and upload. By submitting a photo to a Group room, you grant the other participants of that room a license to view it as part of the montage, and you grant us the license needed to store and transmit it solely to operate the service (see the Privacy policy for retention and deletion).</p>
+<p>When you tap <b>Share</b> on a finished montage, you grant us a non-exclusive, royalty-free license to store that montage image and show it to anyone who opens the share link, on colorcollectapp.com and in the app, until the link expires (90 days) or you delete your data. Only share montages you have the right to share; if a photo shows other people, make sure they are fine with it.</p>
 <p>You agree not to upload content that is illegal, infringes someone else's rights, or is intended to harass, abuse, or harm another participant. We may remove content or suspend access to a room in response to a violation of these terms.</p>
+</section>
+
+<section id="reporting">
+<h2>4a. Reporting content</h2>
+<p>If you believe a shared montage (a <code>colorcollectapp.com/m/</code> link) or any other content on the app or site is illegal or breaks these terms, email <a href="mailto:colorcollectapp@gmail.com">colorcollectapp@gmail.com</a> with the subject "Content report" and include:</p>
+<ul>
+<li>the exact link (or the room code, for Group-room content);</li>
+<li>why you believe the content is illegal or breaks these terms;</li>
+<li>your name and email address (you may omit them for reports concerning child sexual abuse material);</li>
+<li>a statement that you believe in good faith that the information in your report is accurate and complete.</li>
+</ul>
+<p>We confirm receipt, review every report promptly, diligently and objectively, and tell you what we decided. If we remove or restrict content, we inform the person who shared it (where we can reach them) and explain why. This email address is also our single point of contact for authorities and users under Art. 11 and 12 of the EU Digital Services Act; we accept messages in English and German.</p>
 </section>
 
 <section>
@@ -430,7 +442,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 
 <section>
 <h2>6. In-app purchases</h2>
-<p>The app offers an optional one-time premium unlock and optional donations ("tip jar"). There are no subscriptions, and all core features remain free without purchasing anything. Purchases are processed entirely by Google Play Billing or the App Store; refunds are handled under their respective policies, not by us directly.</p>
+<p>The app offers an optional one-time premium unlock, optional one-time seasonal frame packs, and optional donations ("tip jar"). There are no subscriptions, and all core features remain free without purchasing anything. Purchases are processed entirely by Google Play Billing or the App Store; refunds are handled under their respective policies, not by us directly.</p>
 </section>
 
 <section>
@@ -485,8 +497,10 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <a href="https://colorcollectapp.com/privacy-policy/">Privacy policy</a>
 <a href="https://colorcollectapp.com/terms-of-service/">Terms of service</a>
 <a href="https://colorcollectapp.com/impressum/">Impressum</a>
+<a href="#" id="cc-settings" hidden>Cookie settings</a>
 <a href="/color-of-the-day/">Color of the day</a>
 </nav>
+<p class="foot-legal">Montage photos via <a href="https://www.pexels.com" rel="noopener">Pexels</a>, used under the Pexels license. Map data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors. Google Play and the Google Play logo are trademarks of Google LLC. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
 <div class="foot-meta">
 <div class="handle">@colorcollectapp</div>
 <div class="foot-social">
@@ -497,7 +511,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 </div>
 </div></footer>
 <div id="cc-consent" class="cc-consent" role="region" aria-label="Cookie consent" hidden>
-<p>We use cookies to understand site traffic. <a href="https://colorcollectapp.com/privacy-policy/">Privacy policy</a></p>
+<p>With your consent we use Google Analytics cookies to understand site traffic. Nothing is loaded until you accept; you can change your mind anytime via "Cookie settings" at the bottom of every page. <a href="https://colorcollectapp.com/privacy-policy/#cookies">Privacy policy</a></p>
 <div class="cc-consent-actions">
 <button type="button" id="cc-consent-decline">Decline</button>
 <button type="button" id="cc-consent-accept">Accept</button>
@@ -506,22 +520,28 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <script>(function(){
 var KEY='cc_consent',saved=null;
 try{saved=localStorage.getItem(KEY);}catch(e){}
-function grant(){gtag('consent','update',{'ad_storage':'granted','analytics_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});}
-if(saved==='granted'){grant();}
-else if(saved!=='denied'){
 var el=document.getElementById('cc-consent');
-if(el){
-el.hidden=false;
+if(!el)return;
+// Withdrawing must be as easy as accepting (GDPR Art. 7(3)): stop GA and
+// expire its cookies on this host and the parent domain.
+function revoke(){
+if(window.ccGaLoaded)gtag('consent','update',{'analytics_storage':'denied'});
+document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();
+if(n.indexOf('_ga')===0){var d=location.hostname.replace(/^www\./,'');
+document.cookie=n+'=;max-age=0;path=/';document.cookie=n+'=;max-age=0;path=/;domain=.'+d;}});
+}
 document.getElementById('cc-consent-accept').addEventListener('click',function(){
 try{localStorage.setItem(KEY,'granted');}catch(e){}
-grant();el.hidden=true;
+if(window.ccGaLoaded)gtag('consent','update',{'analytics_storage':'granted'});
+ccLoadGa();el.hidden=true;
 });
 document.getElementById('cc-consent-decline').addEventListener('click',function(){
 try{localStorage.setItem(KEY,'denied');}catch(e){}
-el.hidden=true;
+revoke();el.hidden=true;
 });
-}
-}
+var link=document.getElementById('cc-settings');
+if(link){link.hidden=false;link.addEventListener('click',function(e){e.preventDefault();el.hidden=false;});}
+if(saved!=='granted'&&saved!=='denied')el.hidden=false;
 })();</script>
 <script>
 document.documentElement.classList.add('js');

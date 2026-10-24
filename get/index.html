@@ -32,12 +32,13 @@
     }
     .badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
       margin-top: 1.1rem; }
-    .badge { display: inline-flex; flex-direction: column; align-items: flex-start;
-      padding: .55rem 1rem; border-radius: 12px; background: #f5f4f1; color: #17171d;
-      text-decoration: none; line-height: 1.1; min-width: 132px; }
-    .badge small { font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
-    .badge strong { font-size: 1rem; }
+    .badges { align-items: center; }
+    .badge { display: inline-flex; line-height: 0; }
+    .store-badge-img { display: block; width: auto; }
+    .store-badge-img.ios { height: 46px; }
+    .store-badge-img.play { height: 68px; margin: -11px; }
     .muted { font-size: .85rem; opacity: .6; margin-top: 1.4rem; }
+    .muted a { color: inherit; text-decoration: underline; }
 
   </style>
 </head>
@@ -46,8 +47,8 @@
     <h1>ColorCollect</h1>
     <p>Pick a color, find it all around you and turn your photos into a montage. Free.</p>
     <div class="badges">
-      <a class="badge" id="play" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect"><small>Get it on</small><strong>Google Play</strong></a>
-      <a class="badge" id="ios" href="https://apps.apple.com/app/id6784390996"><small>Download on the</small><strong>App Store</strong></a>
+      <a class="badge" id="play" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect"><img class="store-badge-img play" src="/assets/badges/google-play.png" width="646" height="250" alt="Get it on Google Play"></a>
+      <a class="badge" id="ios" href="https://apps.apple.com/app/id6784390996"><img class="store-badge-img ios" src="/assets/badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a>
     </div>
     <p class="muted"><a href="https://colorcollectapp.com/" style="color: inherit">More about ColorCollect</a></p>
   </div>

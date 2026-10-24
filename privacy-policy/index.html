@@ -118,11 +118,12 @@ section{margin:78px 0}
 /* Apple hardware: drop the Play badge/link so the App Store one carries the
    CTA. Set from <head> before first paint — see _appleStoreScript(). */
 .apple [data-store="play"]{display:none}
-.store-badge{display:inline-flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:12px 20px;border-radius:14px;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .2s,box-shadow .2s}
-.store-badge:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 12px 24px -10px rgba(23,23,29,.55)}
-.store-badge-txt{display:flex;flex-direction:column;line-height:1.12;text-align:left}
-.store-badge-txt small{font-family:var(--mono);font-size:9px;letter-spacing:.13em;opacity:.85}
-.store-badge-txt strong{font-size:16.5px;font-weight:650}
+.badges{align-items:center}
+.store-badge{display:inline-flex;line-height:0;border-radius:9px;transition:transform .2s,box-shadow .2s}
+.store-badge:hover{text-decoration:none;transform:translateY(-2px)}
+.store-badge-img{display:block;width:auto}
+.store-badge-img.ios{height:52px}
+.store-badge-img.play{height:77px;margin:-12.5px}
 
 /* ---- feature list (swatch-square bullets) --------------------------------- */
 .features{display:grid;grid-template-columns:1fr 1fr;gap:13px 30px;margin:22px 0;padding:0;list-style:none}
@@ -266,8 +267,6 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 .cta h2{font-size:clamp(2rem,4.8vw,3.1rem);margin:0 0 .25em;color:#fff;letter-spacing:-.028em}
 .cta p{color:#c7c7cf;margin:.3em auto;max-width:60ch}
 .cta .badges{justify-content:center;margin-top:26px}
-.cta .store-badge{background:#f5f4f1;color:var(--ink)}
-.cta .store-badge:hover{box-shadow:0 12px 26px -10px rgba(0,0,0,.6)}
 .cta .fine{color:#8e8e98}
 .cta a{color:color-mix(in oklab,var(--accent) 55%,#fff)}
 
@@ -279,6 +278,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 
 /* ---- footer ------------------------------------------------------------------ */
 .site-foot{margin:100px 0 46px;color:var(--ink2);font-size:14px}
+.foot-legal{font-size:12px;opacity:.75;margin:14px 0 0}
 .site-foot .wrap{padding-top:30px;border-top:1px solid var(--line);display:grid;gap:14px}
 .foot-pitch{font-family:var(--disp);font-weight:650;font-size:16.5px;color:var(--ink);letter-spacing:-.01em;max-width:46ch}
 .foot-about{margin:-6px 0 0;font-size:13.5px;max-width:60ch}
@@ -380,8 +380,7 @@ document.documentElement.classList.add('apple');
 var go=function(){var a=document.querySelectorAll('a[data-ios]');for(var i=0;i<a.length;i++){a[i].href=a[i].getAttribute('data-ios');}};
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}
 })();</script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var ccGranted=false;try{ccGranted=localStorage.getItem('cc_consent')==='granted';}catch(e){}gtag('consent','default',{'ad_storage':ccGranted?'granted':'denied','analytics_storage':ccGranted?'granted':'denied','ad_user_data':ccGranted?'granted':'denied','ad_personalization':ccGranted?'granted':'denied'});gtag('js', new Date());gtag('config', 'G-K3B361ZJLR');</script>
-<script async src='https://www.googletagmanager.com/gtag/js?id=G-K3B361ZJLR'></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'granted','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});window.ccLoadGa=function(){if(window.ccGaLoaded)return;window.ccGaLoaded=true;gtag('js',new Date());gtag('config','G-K3B361ZJLR');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-K3B361ZJLR';document.head.appendChild(s);};try{if(localStorage.getItem('cc_consent')==='granted')ccLoadGa();}catch(e){}</script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "68a36821385e45ffa2d5e6e0cd55bd92"}'></script>
 </head>
 <body>
@@ -399,7 +398,18 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Privacy policy</li></ol></nav><section class="color-hero">
 <div class="eyebrow">Legal</div>
 <h1>Privacy policy</h1>
-<p class="hero-sub">Last updated: 2026-10-14. This document explains what data the ColorCollect app ("the app", "we") and this website collect, why, and how long it stays around. This is not legal advice.</p>
+<p class="hero-sub">Last updated: 2026-10-24. This document explains what data the ColorCollect app ("the app", "we") and this website collect, why, and how long it stays around.</p>
+</section>
+
+<section>
+<h2>Who is responsible</h2>
+<p>The controller under the EU General Data Protection Regulation (GDPR) for the app and this website is:</p>
+<p>Liviusz Lovasz<br>
+Humperdinckstr. 7<br>
+80807 München<br>
+Germany<br>
+Email: <a href="mailto:lancimator@gmail.com">lancimator@gmail.com</a></p>
+<p>We are not required to appoint a data protection officer.</p>
 </section>
 
 <section>
@@ -411,7 +421,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <li><b>Optional geotagging</b> — if you opt in, GPS coordinates are saved locally with each photo. They are not sent to our servers unless you also opt in to sharing a photo's location with your group room.</li>
 <li><b>Optional crash reports</b> — off unless you say yes. After your first finished montage the app asks once whether to send anonymous crash reports; you can change your answer anytime in Settings → Privacy (section 1.4).</li>
 <li><b>Bot protection</b> — when the app first connects to our backend, an invisible Cloudflare Turnstile check may run to keep automated fake accounts out. Cloudflare sees technical device signals (such as your IP address) for that check only (section 1.8).</li>
-<li>We do <b>not</b> sell your data and we do not show ads. The <b>app</b> contains no third-party trackers; this <b>website</b> uses Google Analytics, but only after you accept cookies (see section 6).</li>
+<li>We do <b>not</b> sell your data and we do not show ads. The <b>app</b> contains no third-party trackers. This <b>website</b> loads Google Analytics only after you accept cookies, and uses cookieless Cloudflare Web Analytics for basic page counts (see section 6).</li>
 <li><b>Optional in-app purchases</b> — an optional premium unlock, optional seasonal frame packs and optional donations (a "tip jar"). Payment is handled entirely by the App Store / Google Play; we never see or store your payment details. All core features remain free.</li>
 </ul>
 </section>
@@ -482,14 +492,33 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <ul>
 <li><b>Local data</b> — only you.</li>
 <li><b>Group-room photos and votes</b> — only the participants of the room you're in. Anyone with the 6-character room code can join the room and see its contents, so treat the code like a password — only share it with people you want in the montage.</li>
-<li><b>Cloudflare</b> — receives only the technical signals needed for the bot-protection check in section 1.8, never your photos, names or montages.</li>
-<li><b>We (the operators)</b> — Supabase support staff can technically access the database in the course of providing the hosted service. We do not routinely access user data and do not share it with anyone else.</li>
+<li><b>Cloudflare</b> — receives only the technical signals needed for the bot-protection check in section 1.8, never your photos, names or montages. On this website, Cloudflare also provides the cookieless page statistics in section 6.2.</li>
+<li><b>We (the operators)</b> — We do not routinely access user data and do not share it with anyone beyond the service providers listed below.</li>
+</ul>
+<p>We use these service providers, each bound by a data processing agreement (or, for Google Play and the App Store, acting under their own terms as payment platforms):</p>
+<ul>
+<li><b>Supabase, Inc.</b> — backend database, storage and server functions, hosted in the EU (Frankfurt). Supabase support staff can technically access the database in the course of providing the hosted service.</li>
+<li><b>Functional Software, Inc. (Sentry)</b>, USA — crash reports, only if you opt in (section 1.4).</li>
+<li><b>Cloudflare, Inc.</b>, USA — bot protection in the app (section 1.8) and cookieless page statistics on this website (section 6.2).</li>
+<li><b>GitHub, Inc.</b> (a Microsoft company), USA — hosts this website (section 6.2).</li>
+<li><b>Google Ireland Ltd. / Google LLC</b> — Google Analytics on this website, only if you accept cookies (section 6.2); Google Play for purchases and downloads.</li>
+<li><b>Apple Inc.</b> — the App Store for purchases and downloads.</li>
+<li><b>OpenStreetMap Foundation</b> — map tiles in the app (section 1.3); an independent service, not a processor.</li>
 </ul>
 </section>
 
 <section>
 <h2>4. International transfers</h2>
-<p>Our backend is hosted on Supabase in the <b>EU (Frankfurt)</b>. If you're outside the EU, your data is transferred to and stored in the EU. The bot-protection check (section 1.8) is processed by Cloudflare, Inc. on its global network, so those technical signals may be processed outside the EU, including in the United States, under Cloudflare's own data-transfer safeguards.</p>
+<p>Our backend is hosted on Supabase in the <b>EU (Frankfurt)</b>. If you're outside the EU, your data is transferred to and stored in the EU. The bot-protection check (section 1.8) is processed by Cloudflare, Inc. on its global network, so those technical signals may be processed outside the EU, including in the United States. The same applies to opt-in crash reports (Sentry), this website's hosting (GitHub) and page statistics (Cloudflare), and Google Analytics if you accept it. Transfers to the United States rely on the EU-U.S. Data Privacy Framework adequacy decision (Art. 45 GDPR) where the provider is certified, and otherwise on the European Commission's Standard Contractual Clauses (Art. 46(2)(c) GDPR).</p>
+</section>
+
+<section>
+<h2>4a. Why we may process your data (legal bases)</h2>
+<ul>
+<li><b>To provide what you asked for</b> (Art. 6(1)(b) GDPR) — Group rooms, uploads, votes, shared montage links, invite and rematch features, and checking a premium purchase with the store.</li>
+<li><b>Your consent</b> (Art. 6(1)(a) GDPR, and § 25(1) TDDDG for access to your device) — crash reports, sharing photo locations with your group, reminders, and Google Analytics on this website. You can withdraw consent at any time with effect for the future, using the in-app setting or the "Cookie settings" link at the bottom of every page on this website.</li>
+<li><b>Our legitimate interests</b> (Art. 6(1)(f) GDPR) — keeping the service secure and free of abuse (bot protection, per-day counters, server and hosting logs), understanding how the app and site are used so we can improve them (anonymous usage statistics, cookieless page statistics), and reading invite links you followed before installing (section 1.9). You can object to this processing at any time (section 5).</li>
+</ul>
 </section>
 
 <section>
@@ -501,16 +530,22 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <li><b>Request server-side deletion by email</b> — if the in-app deletion fails (e.g. you have no internet at the time), email <a href="mailto:lancimator@gmail.com">lancimator@gmail.com</a> with the anonymous account id from Settings and we will purge the server-side data manually within 30 days.</li>
 <li><b>Export your data</b> — montages live on your device and can be saved to your gallery via the share sheet. To request a copy of server-side data, email the support address above.</li>
 </ul>
+<p>Under the GDPR you also have the right to <b>access</b> the data we hold about you (Art. 15), to have it <b>corrected</b> (Art. 16) or <b>erased</b> (Art. 17), to <b>restrict</b> its processing (Art. 18), to receive it in a portable format (<b>data portability</b>, Art. 20), and to <b>withdraw any consent</b> at any time without affecting processing done before (Art. 7(3)).</p>
+<p><b>Right to object (Art. 21 GDPR):</b> where we rely on legitimate interests (section 4a), you can object at any time on grounds relating to your particular situation, and we will stop unless we have compelling legitimate grounds.</p>
+<p>Because the app does not ask who you are, please include the anonymous account id from Settings with any request so we can find your data. We answer within one month.</p>
+<p>You also have the right to <b>lodge a complaint with a data protection supervisory authority</b>, in particular in the EU country where you live or work. The authority responsible for us is the Bavarian State Office for Data Protection Supervision (Bayerisches Landesamt f&uuml;r Datenschutzaufsicht, <a href="https://www.lda.bayern.de" rel="noopener">www.lda.bayern.de</a>), Promenade 18, 91522 Ansbach, Germany.</p>
 </section>
 
 <section>
-<h2>6. Cookies & trackers</h2>
+<h2 id="cookies">6. Cookies & trackers</h2>
 <h3>6.1 In the app</h3>
 <p>The app does not use advertising identifiers or third-party trackers. The only third-party code that runs is the invisible Cloudflare Turnstile bot check described in section 1.8, which Cloudflare may support with its own strictly necessary cookies inside that hidden web view; it is used only to tell people apart from bots, never for advertising or tracking. We do not integrate Facebook SDK, Google Ads, or similar.</p>
 <h3>6.2 On this website</h3>
-<p>This website (the marketing and link-in-bio site) uses <b>Google Analytics (GA4)</b> to understand aggregate traffic — for example how many people visit, which pages they view, and roughly where visitors come from. Google Analytics sets cookies to do this.</p>
-<p>Analytics is <b>consent-gated</b>: by default we tell Google to store nothing (<code>analytics_storage</code> and <code>ad_storage</code> are set to "denied"), so no analytics cookies are written and no data is sent until you press <b>Accept</b> on the cookie banner. If you press <b>Decline</b> (or ignore the banner), analytics stays off. Your choice is remembered in your browser's local storage so we don't ask again; you can reset it by clearing this site's site data in your browser.</p>
-<p>We use analytics only in aggregate. We do <b>not</b> use it for advertising, ad personalization, or to build a profile of you — <code>ad_storage</code>, <code>ad_user_data</code>, and <code>ad_personalization</code> are left denied even after you accept. Google processes this data as described in <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The website does not integrate Facebook SDK, Google Ads, or similar.</p>
+<p><b>Hosting.</b> This website is hosted on GitHub Pages (GitHub, Inc.). When you open a page, GitHub's servers process your IP address, the page requested, the time, and your browser's User-Agent to deliver the page and to protect the service; GitHub keeps these server logs under its own policies. Legal basis: our legitimate interest in delivering a secure website (Art. 6(1)(f) GDPR).</p>
+<p><b>Cookieless page statistics.</b> We use <b>Cloudflare Web Analytics</b> to count page views, referrers and load times. It sets no cookies, does not use local storage or fingerprinting, and does not track you across sites or visits; Cloudflare receives your IP address and browser details with each page view and reports only aggregated numbers to us. Legal basis: our legitimate interest in knowing which pages are used (Art. 6(1)(f) GDPR). See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</p>
+<p><b>Google Analytics (only with your consent).</b> If you press <b>Accept</b> on the cookie banner, this website loads <b>Google Analytics (GA4)</b> to understand aggregate traffic — for example how many people visit, which pages they view, and roughly where visitors come from. Google Analytics sets cookies (named <code>_ga</code> and <code>_ga_*</code>, kept for up to 2 years) to do this. Until you accept, the Google Analytics script is not loaded at all, so nothing is sent to Google. If you press <b>Decline</b> (or ignore the banner), it stays off. Legal basis: your consent (Art. 6(1)(a) GDPR, § 25(1) TDDDG).</p>
+<p>Your choice is remembered in your browser's local storage (key <code>cc_consent</code>) so we don't ask again. You can change it at any time with the <b>Cookie settings</b> link at the bottom of every page; declining after accepting stops Google Analytics and deletes its cookies.</p>
+<p>We use analytics only in aggregate. We do <b>not</b> use it for advertising, ad personalization, or to build a profile of you — <code>ad_storage</code>, <code>ad_user_data</code>, and <code>ad_personalization</code> stay denied even after you accept. Google processes this data as described in <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The website does not integrate Facebook SDK, Google Ads, or similar.</p>
 </section>
 
 <section>
@@ -552,8 +587,10 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <a href="https://colorcollectapp.com/privacy-policy/">Privacy policy</a>
 <a href="https://colorcollectapp.com/terms-of-service/">Terms of service</a>
 <a href="https://colorcollectapp.com/impressum/">Impressum</a>
+<a href="#" id="cc-settings" hidden>Cookie settings</a>
 <a href="/color-of-the-day/">Color of the day</a>
 </nav>
+<p class="foot-legal">Montage photos via <a href="https://www.pexels.com" rel="noopener">Pexels</a>, used under the Pexels license. Map data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors. Google Play and the Google Play logo are trademarks of Google LLC. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
 <div class="foot-meta">
 <div class="handle">@colorcollectapp</div>
 <div class="foot-social">
@@ -564,7 +601,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 </div>
 </div></footer>
 <div id="cc-consent" class="cc-consent" role="region" aria-label="Cookie consent" hidden>
-<p>We use cookies to understand site traffic. <a href="https://colorcollectapp.com/privacy-policy/">Privacy policy</a></p>
+<p>With your consent we use Google Analytics cookies to understand site traffic. Nothing is loaded until you accept; you can change your mind anytime via "Cookie settings" at the bottom of every page. <a href="https://colorcollectapp.com/privacy-policy/#cookies">Privacy policy</a></p>
 <div class="cc-consent-actions">
 <button type="button" id="cc-consent-decline">Decline</button>
 <button type="button" id="cc-consent-accept">Accept</button>
@@ -573,22 +610,28 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <script>(function(){
 var KEY='cc_consent',saved=null;
 try{saved=localStorage.getItem(KEY);}catch(e){}
-function grant(){gtag('consent','update',{'ad_storage':'granted','analytics_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});}
-if(saved==='granted'){grant();}
-else if(saved!=='denied'){
 var el=document.getElementById('cc-consent');
-if(el){
-el.hidden=false;
+if(!el)return;
+// Withdrawing must be as easy as accepting (GDPR Art. 7(3)): stop GA and
+// expire its cookies on this host and the parent domain.
+function revoke(){
+if(window.ccGaLoaded)gtag('consent','update',{'analytics_storage':'denied'});
+document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();
+if(n.indexOf('_ga')===0){var d=location.hostname.replace(/^www\./,'');
+document.cookie=n+'=;max-age=0;path=/';document.cookie=n+'=;max-age=0;path=/;domain=.'+d;}});
+}
 document.getElementById('cc-consent-accept').addEventListener('click',function(){
 try{localStorage.setItem(KEY,'granted');}catch(e){}
-grant();el.hidden=true;
+if(window.ccGaLoaded)gtag('consent','update',{'analytics_storage':'granted'});
+ccLoadGa();el.hidden=true;
 });
 document.getElementById('cc-consent-decline').addEventListener('click',function(){
 try{localStorage.setItem(KEY,'denied');}catch(e){}
-el.hidden=true;
+revoke();el.hidden=true;
 });
-}
-}
+var link=document.getElementById('cc-settings');
+if(link){link.hidden=false;link.addEventListener('click',function(e){e.preventDefault();el.hidden=false;});}
+if(saved!=='granted'&&saved!=='denied')el.hidden=false;
 })();</script>
 <script>
 document.documentElement.classList.add('js');
