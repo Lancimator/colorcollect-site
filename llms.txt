@@ -1,0 +1,61 @@
+# ColorCollect
+
+> ColorCollect (colorcollectapp.com) is a free color scavenger hunt photo game for Android: pick a color, photograph real-world things that match it, and the shots snap into one shareable photo montage — solo, or with friends via a 6-letter room code and no accounts. It is not the unrelated "Color Collect" color-picker app.
+
+This site also gives away free printable color scavenger hunt sheets and hunt ideas for kids, classrooms, parties, families and long-distance friends and couples.
+
+## Printable hunts and guides
+
+- [Color scavenger hunt guide](https://colorcollectapp.com/color-scavenger-hunt/): rules, variations and color lists for every age
+- [Free printable color scavenger hunt](https://colorcollectapp.com/color-scavenger-hunt-printable/): four print-ready sheets (kids, adults and parties, classroom rainbow, road trip)
+- [Color scavenger hunt generator](https://colorcollectapp.com/color-scavenger-hunt-generator/): builds a custom printable list by age and number of colors
+- [Fall scavenger hunt](https://colorcollectapp.com/fall-scavenger-hunt/): A free printable fall scavenger hunt built around autumn colors — two sheets for a nature walk with kids or adults, plus 20 things to find.
+- [Thanksgiving scavenger hunt](https://colorcollectapp.com/thanksgiving-scavenger-hunt/): A free printable Thanksgiving scavenger hunt for kids and family — an indoor color hunt to run while dinner cooks, plus 20 things to find.
+- [Christmas scavenger hunt](https://colorcollectapp.com/christmas-scavenger-hunt/): A free printable Christmas scavenger hunt for kids and family — a color hunt for indoor decorations and a Christmas lights walk.
+- [Winter scavenger hunt](https://colorcollectapp.com/winter-scavenger-hunt/): A free printable winter scavenger hunt for kids and classrooms — no holiday theme, an outdoor walk and an indoor version, 20 things to find.
+
+## Playing together
+
+- [Play with friends](https://colorcollectapp.com/play-with-friends/): group hunts with a live shared grid and voting
+- [Photo scavenger hunt app](https://colorcollectapp.com/photo-scavenger-hunt-app/): how the app compares to generic photo-hunt apps
+- [Long-distance friends games](https://colorcollectapp.com/long-distance-friends-games/)
+- [Long-distance relationship activities](https://colorcollectapp.com/long-distance-relationship-activities/): 18 color-based date ideas for couples
+- [Photo map](https://colorcollectapp.com/photo-map/): every find pinned on a map (opt-in, per shot)
+
+## Color of the day
+
+- [Color of the day](https://colorcollectapp.com/color-of-the-day/): the one color every player hunts today, changing at midnight UTC
+- [Color of the day widget](https://colorcollectapp.com/color-of-the-day-widget/): free embed for blogs and classroom pages
+
+## Things to find, by color
+
+- [Red things to find](https://colorcollectapp.com/colors/red/)
+- [Orange things to find](https://colorcollectapp.com/colors/orange/)
+- [Yellow things to find](https://colorcollectapp.com/colors/yellow/)
+- [Green things to find](https://colorcollectapp.com/colors/green/)
+- [Teal things to find](https://colorcollectapp.com/colors/teal/)
+- [Blue things to find](https://colorcollectapp.com/colors/blue/)
+- [Violet things to find](https://colorcollectapp.com/colors/violet/)
+- [Pink things to find](https://colorcollectapp.com/colors/pink/)
+- [Brown things to find](https://colorcollectapp.com/colors/brown/)
+- [Slate things to find](https://colorcollectapp.com/colors/slate/)
+- [Sunset things to find](https://colorcollectapp.com/colors/sunset/)
+- [Mint things to find](https://colorcollectapp.com/colors/mint/)
+- [Lime things to find](https://colorcollectapp.com/colors/lime/)
+- [Rose things to find](https://colorcollectapp.com/colors/rose/)
+- [Crimson things to find](https://colorcollectapp.com/colors/crimson/)
+- [Coral things to find](https://colorcollectapp.com/colors/coral/)
+- [Amber things to find](https://colorcollectapp.com/colors/amber/)
+- [Gold things to find](https://colorcollectapp.com/colors/gold/)
+- [Forest things to find](https://colorcollectapp.com/colors/forest/)
+- [Turquoise things to find](https://colorcollectapp.com/colors/turquoise/)
+- [Sky things to find](https://colorcollectapp.com/colors/sky/)
+- [Navy things to find](https://colorcollectapp.com/colors/navy/)
+- [Indigo things to find](https://colorcollectapp.com/colors/indigo/)
+- [Purple things to find](https://colorcollectapp.com/colors/purple/)
+- [Magenta things to find](https://colorcollectapp.com/colors/magenta/)
+
+## Get the app
+
+- [Google Play](https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=llms)
+- Free to play, no ads, optional in-app purchases.

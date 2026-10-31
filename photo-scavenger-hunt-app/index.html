@@ -345,10 +345,28 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 .hunt-sw{width:32px;height:32px;flex:none;border-radius:9px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14)}
 .hunt-name{font-weight:700;min-width:112px}
 .hunt-line{flex:1;min-width:60px;border-bottom:1.5px dotted color-mix(in oklab,var(--ink) 40%,transparent)}
+.hunt-find{flex:0 1 auto;color:var(--ink2);font-size:14px}
+.gen{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 28px;margin:0 0 26px}
+.gen-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0 0 14px}
+.gen-lab{font-weight:700;min-width:150px}
+.gen-opts{display:flex;flex-wrap:wrap;gap:8px}
+.gen-opts label,.gen-check{display:inline-flex;align-items:center;gap:7px;cursor:pointer;font-size:14.5px}
+.gen-opts label{border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--bg)}
+.gen-opts label:has(input:checked){border-color:var(--accent-600);box-shadow:inset 0 0 0 1px var(--accent-600);font-weight:650}
+.gen-opts input{accent-color:var(--accent-600);margin:0}
+.gen .print-actions{margin-top:6px}
+.gen-print{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.widget-demo{background:var(--card);border:1px dashed var(--line);border-radius:20px;padding:22px;display:inline-block;max-width:100%}
+.snippet{width:100%;font:13px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);resize:vertical}
+.idea-list{list-style:none;margin:16px 0 0;padding:0;columns:2 280px;column-gap:32px}
+.idea-list li{display:flex;align-items:baseline;gap:10px;padding:6px 0;break-inside:avoid}
+.idea-dot{width:13px;height:13px;flex:none;border-radius:50%;transform:translateY(1px);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
 @media(max-width:520px){
 .sheet{padding:22px 18px}
 .hunt-name{min-width:88px;font-size:15px}
 .hunt-sw{width:26px;height:26px}
+.hunt-rows li{flex-wrap:wrap;row-gap:4px}
+.hunt-find{font-size:13px}
 }
 
 /* ---- print --------------------------------------------------------------
@@ -370,6 +388,7 @@ h1{font-size:20pt;margin:0 0 4pt}
 .hunt-box{border-color:#000}
 .hunt-sw{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .sheet-foot{color:#555;font-size:8.5pt}
+.hunt-find{color:#333;font-size:10pt}
 a{color:#000;text-decoration:none}
 }
 
@@ -462,6 +481,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <a href="/photo-map/">Photo map</a>
 <a href="/color-scavenger-hunt/">Scavenger hunt guide</a>
 <a href="/color-scavenger-hunt-printable/">Free printable</a>
+<a href="/color-scavenger-hunt-generator/">Hunt list generator</a>
 <a href="/photo-scavenger-hunt-app/">Photo hunt app</a>
 <a href="/long-distance-friends-games/">Long-distance games</a>
 <a href="/long-distance-relationship-activities/">Long-distance couples</a>
@@ -470,6 +490,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <a href="https://colorcollectapp.com/impressum/">Impressum</a>
 <a href="#" id="cc-settings" hidden>Cookie settings</a>
 <a href="/color-of-the-day/">Color of the day</a>
+<a href="/color-of-the-day-widget/">Color of the day widget</a>
 <a href="https://pikefall.com/?utm_source=colorcollect&amp;utm_medium=site" rel="noopener">More from the maker: Pikefall</a>
 </nav>
 <p class="foot-legal">Montage photos via <a href="https://www.pexels.com" rel="noopener">Pexels</a>, used under the Pexels license. Map data &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors. Google Play and the Google Play logo are trademarks of Google LLC. Apple, the Apple logo and App Store are trademarks of Apple Inc.</p>
