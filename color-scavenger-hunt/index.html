@@ -359,6 +359,15 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 .gen-print{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .widget-demo{background:var(--card);border:1px dashed var(--line);border-radius:20px;padding:22px;display:inline-block;max-width:100%}
 .snippet{width:100%;font:13px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);resize:vertical}
+.season-banner{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin:0 0 34px;padding:18px 24px;border-radius:20px;background:color-mix(in oklab,var(--sb) 11%,var(--card));border:1px solid color-mix(in oklab,var(--sb) 38%,transparent)}
+.sb-dots{display:flex;flex:none}
+.sb-dots span{width:22px;height:22px;border-radius:50%;margin-left:-7px;box-shadow:0 0 0 2.5px var(--card)}
+.sb-dots span:first-child{margin-left:0}
+.sb-text{flex:1 1 300px;display:flex;flex-direction:column;gap:2px}
+.sb-k{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in oklab,var(--sb) 70%,var(--ink))}
+.sb-line{font-size:15.5px;color:var(--ink)}
+.sb-cta{flex:none;font-weight:700;color:var(--ink);background:var(--card);border:1.5px solid color-mix(in oklab,var(--sb) 60%,var(--ink));border-radius:999px;padding:9px 18px}
+.sb-cta:hover{text-decoration:none;background:color-mix(in oklab,var(--sb) 16%,var(--card))}
 .idea-list{list-style:none;margin:16px 0 0;padding:0;columns:2 280px;column-gap:32px}
 .idea-list li{display:flex;align-items:baseline;gap:10px;padding:6px 0;break-inside:avoid}
 .idea-dot{width:13px;height:13px;flex:none;border-radius:50%;transform:translateY(1px);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
@@ -423,6 +432,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <p><a class="text-cta" href="/color-scavenger-hunt-printable/">Free printable color scavenger hunt (4 lists) →</a></p>
 <div class="badges"><a class="store-badge" data-store="play" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=guide_hunt_hero"><img class="store-badge-img play" src="/assets/badges/google-play.png" width="646" height="250" alt="Get it on Google Play"></a><a class="store-badge" data-store="ios" href="https://apps.apple.com/app/id6784390996?ct=site_guide_hunt_hero&pt=129068609&mt=8"><img class="store-badge-img ios" src="/assets/badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a></div>
 </section>
+<aside class="season-banner no-print" data-season="fall-scavenger-hunt" data-placement="guide" style="--sb:#F57C00"><span class="sb-dots" aria-hidden="true"><span style="background:#D32F2F"></span><span style="background:#F57C00"></span><span style="background:#FDD835"></span><span style="background:#2E7D32"></span><span style="background:#795548"></span></span><span class="sb-text"><span class="sb-k">In season now</span><span class="sb-line">Fall color walk season: two free printable autumn hunt sheets for the park or the woods.</span></span><a class="sb-cta" href="/fall-scavenger-hunt/">Fall scavenger hunt &rarr;</a></aside>
 
 <section>
 <h2>What is a color scavenger hunt?</h2>
