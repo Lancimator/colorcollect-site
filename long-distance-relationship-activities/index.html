@@ -102,7 +102,17 @@ section{margin:78px 0}
 .prints{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3.2vw,36px);margin:56px 0 26px;align-items:start}
 .print{margin:0;max-width:none;background:#fff;padding:10px 10px 4px;border-radius:12px;box-shadow:0 2px 4px rgba(23,23,29,.08),0 26px 50px -20px rgba(23,23,29,.35);transition:transform .35s cubic-bezier(.2,.8,.25,1),box-shadow .35s}
 .print img{border-radius:6px}
-.print figcaption{display:flex;justify-content:space-between;padding:9px 4px 6px;color:#8b8b95}
+.print figcaption{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px 10px;padding:9px 4px 6px;color:#8b8b95}
+.print-cap{color:var(--ink);text-transform:none;letter-spacing:.02em}
+.print-cap b{font-weight:800}
+.print-meta{font-size:.82em;white-space:nowrap}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;border-radius:6px;background:color-mix(in oklab,var(--board) 22%,#fff)}
+.board img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:4px}
+.board-empty{display:grid;place-items:center;aspect-ratio:1;border:2px dashed color-mix(in oklab,var(--board) 55%,#17171d);border-radius:4px;background:rgba(255,255,255,.6);color:color-mix(in oklab,var(--board) 45%,#17171d)}
+.board-empty svg{width:38%;height:auto}
+.live-dot{display:inline-block;width:7px;height:7px;margin-right:6px;border-radius:50%;background:#e53935;vertical-align:1px;animation:livePulse 1.6s ease-in-out infinite}
+@keyframes livePulse{50%{opacity:.25}}
+.prints-note{margin:0 0 8px;text-align:center;color:var(--ink2);font-size:.95em}
 .print:nth-child(1){transform:rotate(-2.2deg) translateY(12px)}
 .print:nth-child(2){transform:rotate(1.4deg) translateY(-10px)}
 .print:nth-child(3){transform:rotate(-1deg) translateY(18px)}
@@ -317,7 +327,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes printIn{from{opacity:0;transform:translateY(30px)}}
 @media(prefers-reduced-motion:reduce){
-.ring,.cta:before,.today-chip,.hunt-wheel,.hero .tag,.hero h1,.hero .lede,.hero .today-line,.hero .badges,.print{animation:none!important}
+.ring,.cta:before,.today-chip,.hunt-wheel,.hero .tag,.hero h1,.hero .lede,.hero .today-line,.hero .badges,.print,.live-dot{animation:none!important}
 .mon,.dot,.tip,.sw,.print,.sug,.pill,.store-badge,.nav-cta,.brand-mark,.wheel-list a{transition:none}
 .js .rev{opacity:1;transform:none;transition:none}
 }

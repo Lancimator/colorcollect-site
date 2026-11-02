@@ -6,7 +6,7 @@
 <title>Free Color of the Day Widget for Your Website</title>
 <meta name="description" content="Free color of the day widget: embed today's color on a classroom page, blog or newsletter. Updates daily, no tracking, no signup.">
 <link rel="canonical" href="https://colorcollectapp.com/color-of-the-day-widget/">
-<meta name="theme-color" content="#87CEEB">
+<meta name="theme-color" content="#FF69B4">
 <meta name="p:domain_verify" content="89922c28cbbb978e0cbd2eec2bd091b0">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -102,7 +102,17 @@ section{margin:78px 0}
 .prints{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3.2vw,36px);margin:56px 0 26px;align-items:start}
 .print{margin:0;max-width:none;background:#fff;padding:10px 10px 4px;border-radius:12px;box-shadow:0 2px 4px rgba(23,23,29,.08),0 26px 50px -20px rgba(23,23,29,.35);transition:transform .35s cubic-bezier(.2,.8,.25,1),box-shadow .35s}
 .print img{border-radius:6px}
-.print figcaption{display:flex;justify-content:space-between;padding:9px 4px 6px;color:#8b8b95}
+.print figcaption{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px 10px;padding:9px 4px 6px;color:#8b8b95}
+.print-cap{color:var(--ink);text-transform:none;letter-spacing:.02em}
+.print-cap b{font-weight:800}
+.print-meta{font-size:.82em;white-space:nowrap}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px;border-radius:6px;background:color-mix(in oklab,var(--board) 22%,#fff)}
+.board img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:4px}
+.board-empty{display:grid;place-items:center;aspect-ratio:1;border:2px dashed color-mix(in oklab,var(--board) 55%,#17171d);border-radius:4px;background:rgba(255,255,255,.6);color:color-mix(in oklab,var(--board) 45%,#17171d)}
+.board-empty svg{width:38%;height:auto}
+.live-dot{display:inline-block;width:7px;height:7px;margin-right:6px;border-radius:50%;background:#e53935;vertical-align:1px;animation:livePulse 1.6s ease-in-out infinite}
+@keyframes livePulse{50%{opacity:.25}}
+.prints-note{margin:0 0 8px;text-align:center;color:var(--ink2);font-size:.95em}
 .print:nth-child(1){transform:rotate(-2.2deg) translateY(12px)}
 .print:nth-child(2){transform:rotate(1.4deg) translateY(-10px)}
 .print:nth-child(3){transform:rotate(-1deg) translateY(18px)}
@@ -317,7 +327,7 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes printIn{from{opacity:0;transform:translateY(30px)}}
 @media(prefers-reduced-motion:reduce){
-.ring,.cta:before,.today-chip,.hunt-wheel,.hero .tag,.hero h1,.hero .lede,.hero .today-line,.hero .badges,.print{animation:none!important}
+.ring,.cta:before,.today-chip,.hunt-wheel,.hero .tag,.hero h1,.hero .lede,.hero .today-line,.hero .badges,.print,.live-dot{animation:none!important}
 .mon,.dot,.tip,.sw,.print,.sug,.pill,.store-badge,.nav-cta,.brand-mark,.wheel-list a{transition:none}
 .js .rev{opacity:1;transform:none;transition:none}
 }
@@ -402,7 +412,7 @@ h1{font-size:20pt;margin:0 0 4pt}
 a{color:#000;text-decoration:none}
 }
 
-:root{--bg:#F8FCFE;--accent:#87CEEB;--accent-600:#1E8AB6;--accent-700:#186D90;--on-accent:#000000;--ring:conic-gradient(from -8deg,#E53935 0.00deg 11.81deg,transparent 11.81deg 14.40deg,#F4511E 14.40deg 26.21deg,transparent 26.21deg 28.80deg,#8D6E63 28.80deg 40.61deg,transparent 40.61deg 43.20deg,#FF7F50 43.20deg 55.01deg,transparent 55.01deg 57.60deg,#FB8C00 57.60deg 69.41deg,transparent 69.41deg 72.00deg,#FFC000 72.00deg 83.81deg,transparent 83.81deg 86.40deg,#FDD835 86.40deg 98.21deg,transparent 98.21deg 100.80deg,#FFD700 100.80deg 112.61deg,transparent 112.61deg 115.20deg,#7CB342 115.20deg 127.01deg,transparent 127.01deg 129.60deg,#43A047 129.60deg 141.41deg,transparent 141.41deg 144.00deg,#146432 144.00deg 155.81deg,transparent 155.81deg 158.40deg,#40E0D0 158.40deg 170.21deg,transparent 170.21deg 172.80deg,#26A69A 172.80deg 184.61deg,transparent 184.61deg 187.20deg,#00ACC1 187.20deg 199.01deg,transparent 199.01deg 201.60deg,#78C8EB 201.60deg 213.41deg,transparent 213.41deg 216.00deg,#546E7A 216.00deg 227.81deg,transparent 227.81deg 230.40deg,#1E88E5 230.40deg 242.21deg,transparent 242.21deg 244.80deg,#141E5A 244.80deg 256.61deg,transparent 256.61deg 259.20deg,#5E35B1 259.20deg 271.01deg,transparent 271.01deg 273.60deg,#4B0082 273.60deg 285.41deg,transparent 285.41deg 288.00deg,#801E8C 288.00deg 299.81deg,transparent 299.81deg 302.40deg,#DC28C8 302.40deg 314.21deg,transparent 314.21deg 316.80deg,#D81B60 316.80deg 328.61deg,transparent 328.61deg 331.20deg,#EC407A 331.20deg 343.01deg,transparent 343.01deg 345.60deg,#961428 345.60deg 357.41deg,transparent 357.41deg 360.00deg);}
+:root{--bg:#FFF7FB;--accent:#FF69B4;--accent-600:#F5007A;--accent-700:#C00060;--on-accent:#000000;--ring:conic-gradient(from -8deg,#E53935 0.00deg 11.81deg,transparent 11.81deg 14.40deg,#F4511E 14.40deg 26.21deg,transparent 26.21deg 28.80deg,#8D6E63 28.80deg 40.61deg,transparent 40.61deg 43.20deg,#FF7F50 43.20deg 55.01deg,transparent 55.01deg 57.60deg,#FB8C00 57.60deg 69.41deg,transparent 69.41deg 72.00deg,#FFC000 72.00deg 83.81deg,transparent 83.81deg 86.40deg,#FDD835 86.40deg 98.21deg,transparent 98.21deg 100.80deg,#FFD700 100.80deg 112.61deg,transparent 112.61deg 115.20deg,#7CB342 115.20deg 127.01deg,transparent 127.01deg 129.60deg,#43A047 129.60deg 141.41deg,transparent 141.41deg 144.00deg,#146432 144.00deg 155.81deg,transparent 155.81deg 158.40deg,#40E0D0 158.40deg 170.21deg,transparent 170.21deg 172.80deg,#26A69A 172.80deg 184.61deg,transparent 184.61deg 187.20deg,#00ACC1 187.20deg 199.01deg,transparent 199.01deg 201.60deg,#78C8EB 201.60deg 213.41deg,transparent 213.41deg 216.00deg,#546E7A 216.00deg 227.81deg,transparent 227.81deg 230.40deg,#1E88E5 230.40deg 242.21deg,transparent 242.21deg 244.80deg,#141E5A 244.80deg 256.61deg,transparent 256.61deg 259.20deg,#5E35B1 259.20deg 271.01deg,transparent 271.01deg 273.60deg,#4B0082 273.60deg 285.41deg,transparent 285.41deg 288.00deg,#801E8C 288.00deg 299.81deg,transparent 299.81deg 302.40deg,#DC28C8 302.40deg 314.21deg,transparent 314.21deg 316.80deg,#D81B60 316.80deg 328.61deg,transparent 328.61deg 331.20deg,#EC407A 331.20deg 343.01deg,transparent 343.01deg 345.60deg,#961428 345.60deg 357.41deg,transparent 357.41deg 360.00deg);}
 </style>
 <script>(function(){var n=navigator,u=n.userAgent||'';
 if(!(/iPhone|iPad|iPod/.test(u)||/Macintosh|Mac OS X/.test(u)||(n.platform==='MacIntel'&&(n.maxTouchPoints||0)>1))){return;}
