@@ -367,6 +367,23 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 .gen .print-actions{margin-top:6px}
 .gen-print{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .widget-demo{background:var(--card);border:1px dashed var(--line);border-radius:20px;padding:22px;display:inline-block;max-width:100%}
+.sched{list-style:none;margin:20px 0 12px;padding:0;display:grid;gap:8px;max-width:540px}
+.sched li{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sched li.now{border-color:var(--accent-600);box-shadow:0 0 0 3px var(--wash)}
+.sched-d b{font-weight:650}
+.sched-d small{color:var(--ink2);font-size:13px;margin-left:9px}
+.sched-c{display:inline-flex;align-items:center;gap:9px;font-weight:600;text-align:right}
+.sched-c i{flex:none;width:16px;height:16px;border-radius:50%;border:1px solid rgba(23,23,29,.22)}
+.facts{margin:20px 0;display:grid;gap:0;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
+.facts div{display:grid;grid-template-columns:150px 1fr;gap:6px 20px;padding:13px 20px;border-top:1px solid var(--line)}
+.facts div:first-child{border-top:0}
+.facts dt{font-weight:650}
+.facts dd{margin:0;color:var(--ink2)}
+.press-assets{list-style:none;margin:22px 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.press-assets li{display:flex;flex-direction:column;gap:9px;font-size:13.5px;color:var(--ink2)}
+.press-assets a{display:flex;align-items:center;justify-content:center;aspect-ratio:1200/630;padding:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.press-assets img{max-height:100%;width:auto;border-radius:8px}
+@media(max-width:600px){.facts div{grid-template-columns:1fr;gap:2px}}
 .snippet{width:100%;font:13px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);resize:vertical}
 .season-banner{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin:0 0 34px;padding:18px 24px;border-radius:20px;background:color-mix(in oklab,var(--sb) 11%,var(--card));border:1px solid color-mix(in oklab,var(--sb) 38%,transparent)}
 .sb-dots{display:flex;flex:none}
@@ -481,7 +498,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 
 <section class="cta">
 <h2>Hunt Green with ColorCollect</h2>
-<p>Pick Green, photograph the finds from the list above, and they snap into a montage you can save and share. Hunt solo, or share a 6-letter code and race your friends through the same list.</p>
+<p>Pick Green, photograph the finds from the list above, and they snap into a montage you can save and share. Hunt solo, or share a 6-letter code and hunt the same list with your friends.</p>
 <div class="badges"><a class="store-badge" data-store="play" href="https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=color_green"><img class="store-badge-img play" src="/assets/badges/google-play.png" width="646" height="250" alt="Get it on Google Play"></a><a class="store-badge" data-store="ios" href="https://apps.apple.com/app/id6784390996?ct=site_color_green&pt=129068609&mt=8"><img class="store-badge-img ios" src="/assets/badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a></div>
 </section>
 
@@ -527,6 +544,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <a href="/photo-scavenger-hunt-app/">Photo hunt app</a>
 <a href="/long-distance-friends-games/">Long-distance games</a>
 <a href="/long-distance-relationship-activities/">Long-distance couples</a>
+<a href="/about/">About &amp; press</a>
 <a href="https://colorcollectapp.com/privacy-policy/">Privacy policy</a>
 <a href="https://colorcollectapp.com/terms-of-service/">Terms of service</a>
 <a href="https://colorcollectapp.com/impressum/">Impressum</a>

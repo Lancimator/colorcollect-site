@@ -55,6 +55,10 @@ This site also gives away free printable color scavenger hunt sheets and hunt id
 - [Purple things to find](https://colorcollectapp.com/colors/purple/)
 - [Magenta things to find](https://colorcollectapp.com/colors/magenta/)
 
+## About
+
+- [About ColorCollect](https://colorcollectapp.com/about/): fact sheet, copy-ready descriptions, press images and contact
+
 ## Get the app
 
 - [Google Play](https://play.google.com/store/apps/details?id=dev.colorcollect.color_collect&utm_source=colorcollect-site&utm_medium=referral&utm_campaign=site&utm_content=llms)

@@ -367,6 +367,23 @@ figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tr
 .gen .print-actions{margin-top:6px}
 .gen-print{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .widget-demo{background:var(--card);border:1px dashed var(--line);border-radius:20px;padding:22px;display:inline-block;max-width:100%}
+.sched{list-style:none;margin:20px 0 12px;padding:0;display:grid;gap:8px;max-width:540px}
+.sched li{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.sched li.now{border-color:var(--accent-600);box-shadow:0 0 0 3px var(--wash)}
+.sched-d b{font-weight:650}
+.sched-d small{color:var(--ink2);font-size:13px;margin-left:9px}
+.sched-c{display:inline-flex;align-items:center;gap:9px;font-weight:600;text-align:right}
+.sched-c i{flex:none;width:16px;height:16px;border-radius:50%;border:1px solid rgba(23,23,29,.22)}
+.facts{margin:20px 0;display:grid;gap:0;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
+.facts div{display:grid;grid-template-columns:150px 1fr;gap:6px 20px;padding:13px 20px;border-top:1px solid var(--line)}
+.facts div:first-child{border-top:0}
+.facts dt{font-weight:650}
+.facts dd{margin:0;color:var(--ink2)}
+.press-assets{list-style:none;margin:22px 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.press-assets li{display:flex;flex-direction:column;gap:9px;font-size:13.5px;color:var(--ink2)}
+.press-assets a{display:flex;align-items:center;justify-content:center;aspect-ratio:1200/630;padding:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.press-assets img{max-height:100%;width:auto;border-radius:8px}
+@media(max-width:600px){.facts div{grid-template-columns:1fr;gap:2px}}
 .snippet{width:100%;font:13px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);resize:vertical}
 .season-banner{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin:0 0 34px;padding:18px 24px;border-radius:20px;background:color-mix(in oklab,var(--sb) 11%,var(--card));border:1px solid color-mix(in oklab,var(--sb) 38%,transparent)}
 .sb-dots{display:flex;flex:none}
@@ -452,7 +469,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <ol class="steps">
 <li><b>The daily color ritual</b><i class="vh">. </i><span>Use the <a href="/color-of-the-day/">color of the day</a> as a shared prompt — everyone worldwide hunts the same color, so you two (or your whole group chat) always have today's mission.</span></li>
 <li><b>The holiday hunt</b><i class="vh">. </i><span>One of you is traveling? Hunt the same color from the beach and from home — the montage mixes vacation finds with hometown ones, and beats any postcard.</span></li>
-<li><b>The weekend race</b><i class="vh">. </i><span>Open a room on Saturday morning, hunt all weekend, then vote the best shots into the final montage on Sunday night. The standings card settles who has the better eye.</span></li>
+<li><b>The weekend hunt</b><i class="vh">. </i><span>Open a room on Saturday morning, hunt all weekend, then vote the best shots into the final montage on Sunday night. The standings card settles who has the better eye.</span></li>
 </ol>
 </section>
 
@@ -476,7 +493,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 
 <section>
 <h2>Playing it with a partner, not a group</h2>
-<p>The same room works just as well for two. If it's your other half on the far end rather than a group chat, the rhythm is different — a small daily ritual instead of a weekend race — so it has a page of its own, with 18 date ideas built around a single color.</p>
+<p>The same room works just as well for two. If it's your other half on the far end rather than a group chat, the rhythm is different — a small daily ritual instead of a weekend hunt — so it has a page of its own, with 18 date ideas built around a single color.</p>
 <p><a class="text-cta" href="/long-distance-relationship-activities/">Long-distance relationship activities →</a></p>
 </section>
 
@@ -513,6 +530,7 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 <a href="/photo-scavenger-hunt-app/">Photo hunt app</a>
 <a href="/long-distance-friends-games/">Long-distance games</a>
 <a href="/long-distance-relationship-activities/">Long-distance couples</a>
+<a href="/about/">About &amp; press</a>
 <a href="https://colorcollectapp.com/privacy-policy/">Privacy policy</a>
 <a href="https://colorcollectapp.com/terms-of-service/">Terms of service</a>
 <a href="https://colorcollectapp.com/impressum/">Impressum</a>
